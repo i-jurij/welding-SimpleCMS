@@ -1,0 +1,9 @@
+/* @import "@fortawesome/fontawesome-free/css/all.css"; */
+@import './normalize.css';
+/* @import '../js/other/fancybox.css'; */
+/* @import '../js/other/panzoom.css'; */
+@import './manikur.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

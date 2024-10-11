@@ -1,0 +1,42 @@
+Admins pages:
+1. add, del user (register, delete from lavarel) +
+2. create, delete pages +
+3. read and clear logs
+
+Admin Moders pages:
+4. editors of pages (services +, about +, gallery +, map +)
+5. create, delete, change services for users pages +
+6. price editor +
+7. contacts editor (tlf, vk, tg and other) +
+8. add, remove, change masters +
+9. schedule editor
+10. clients
+11. orders
+12. callbacks clear button in callback log (only the callbacks for today will remain)
+13. appointment by masters remove or update
+
+Admin Users pages:
+14. callback list +
+15. callback log +
+14. appointment by masters
+16. appointment by dates
+
+
+Client pages:
+1. callback +
+2 gallery +
+3 about +
+4 persinfo +
+5 map +
+6 service pages +
+7 price +
+8 signup (with appointment remove or update)
+
+
+////////////////
+
+admin pages:
+1. clients - list with rating by check, numbers of completed orders, button for orders viewing (with rating by numbers)
+N | name | contacts | average check (button rating) | number of orders/completed orders  (button orders)
+
+2. orders - просмотр по времени, клиентам, мастерам и прочим колонкам таблицы заказов

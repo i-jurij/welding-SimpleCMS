@@ -1,5 +1,5 @@
 <?php
-/*
+
     $admin_url = url()->route('admin.home');
     $prev_url = url()->previous();
     $current_url = url()->current();
@@ -11,14 +11,5 @@
     } else {
         echo $current;
     }
-*/
-?>
 
-<div class="adm_content text_left">
-<?php
-if (!empty($routes)) {
-    print_r($routes);
-} else {
-    echo 'No routes (pages)';
-} ?>
-</div>
+?>

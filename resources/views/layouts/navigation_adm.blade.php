@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="back shad margin_bottom_1rem">
+<nav x-data="{ open: false }" class="">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -21,15 +21,6 @@
                         </x-nav-link>
                         <x-nav-link :href="route('admin.user.change')" :active="request()->routeIs('admin.user.change')">
                             {{ __('User change') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('admin.page.add')" :active="request()->routeIs('admin.page.add')">
-                            {{ __('Page add') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('admin.page.remove')" :active="request()->routeIs('admin.page.remove')">
-                            {{ __('Page remove') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('admin.logs')" :active="request()->routeIs('admin.logs')">
-                            {{ __('Logs') }}
                         </x-nav-link>
                     @endif
                 </div>
@@ -84,9 +75,6 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('admin.home')" :active="request()->routeIs('admin.home')">
-                {{ __('Adm') }}
-            </x-responsive-nav-link>
             @if (Auth::user()['status'] === 'admin')
             <x-responsive-nav-link :href="route('admin.user.add')" :active="request()->routeIs('admin.user.add')">
                 {{ __('User add') }}
@@ -97,17 +85,6 @@
             <x-responsive-nav-link :href="route('admin.user.change')" :active="request()->routeIs('admin.user.change')">
                 {{ __('User change') }}
             </x-responsive-nav-link>
-
-            <x-responsive-nav-link :href="route('admin.page.add')" :active="request()->routeIs('admin.page.add')">
-                {{ __('Page add') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link  :href="route('admin.page.remove')" :active="request()->routeIs('admin.page.remove')">
-                {{ __('Page remove') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.logs')" :active="request()->routeIs('admin.logs')">
-                {{ __('Logs') }}
-            </x-responsive-nav-link>
-
             @endif
         </div>
 
@@ -115,7 +92,6 @@
         <div class="pt-4 pb-1 border-t">
             <div class="px-4">
                 <div class="font-medium text-base">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm ">{{ Auth::user()->email }}</div>
             </div>
 
             <div class="mt-3 space-y-1">

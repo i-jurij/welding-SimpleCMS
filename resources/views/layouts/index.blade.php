@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  class="bgcolor">
 
 <head>
   <meta charset="utf-8">
@@ -17,16 +17,18 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body>
+<body class="">
     <div class="wrapper">
         @include('layouts/header')
 
         <div class="main ">
             <section class="main_section">
                 <div class="flex flex_top">
-                    <div class="content title">
-                        <h1>{{ $title }}</h1>
-                    </div>
+                     @if (url()->current() !== url()->route('client.home'))
+                        <div class="content title">
+                            <h1>{{ $title }}</h1>
+                        </div>
+                    @endif
                     @if ($errors->any())
                         <div class="zapis_usluga back shad pad margin_rlb1 alert alert-danger error">
                             <ul>

@@ -27,33 +27,41 @@
         "Droid Sans Mono",
         "Courier New", monospace;
     --biggest-fontsize: 2rem;
-    --bigg-fontsize: 1.7rem;
-    --big-fontsize: 1.5rem;
-    --base-fontsize: 1.2rem;
-    --middle-fontsize: 1.1rem;
-    --small-fontsize: 1rem;
+    --bigg-fontsize: 1.5rem;
+    --big-fontsize: 1.3rem;
+    --base-fontsize: 1.1rem;
+    --middle-fontsize: 1rem;
+    --small-fontsize: 0.9rem;
 
     --base-lineheight: 1.8rem;
 
     --radius: 0.4rem;
 
-    --bgcolor: #BE4874;
-    --bgcolor-content: rgba(245, 243, 246, 1);
-    --input_bgcolor: white;
-    --bgcolor-button-active: white;
+    --bgcolor: #484848;
+    --bgcolor-content: #6d6d6d;
+    --input_bgcolor: rgb(212, 212, 212, 0.5);
+    --bgcolor-button-active: rgb(101, 101, 101);
 
-    --fontcolor-light: #BE4874;
+    --fontcolor-light: #252525;
     --fontcolor-dark: #1CBADF;
 
-    --fontshadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-    --boxshadow: rgba(0, 0, 0, 0.34) 0px 2px 2px 0px, rgba(0, 0, 0, 0.5) 0px 3px 1px -2px, rgba(0, 0, 0, 0.25) 0px 1px 5px 0px;
-    --boxshadow-active: rgba(0, 0, 0, 0.24) 1px 3px 3px 1px, rgba(0, 0, 0, 0.3) 1px 4px 2px -3px, rgba(0, 0, 0, 0.2) 1px 2px 6px 1px;
+    --fontshadow: rgba(255, 255, 255, 0.6) 1px 0 0;
+    --boxshadow: 0px 0px 5px 1px rgba(41, 41, 41, 0.5), 2px 2px 5px 1px rgba(41, 41, 41, 0.2);
+    --boxshadow-active: rgba(0, 0, 0, 0.4) 1px 1px 3px 1px, rgba(0, 0, 0, 0.3) 1px 2px 2px -3px, rgba(0, 0, 0, 0.2) 1px 2px 6px 1px;
 
-    --button-disabled-color: MediumVioletRed;
+    --button-disabled-color: Maroon;
 
-    --table-bgcolor1: #fff;
-    --table-bgcolor2: #F7F7F7;
-    --table-border: 1px solid #C4C4C4;
+    --table-bgcolor1: rgb(191, 191, 191, 0.5);
+    --table-bgcolor2: rgb(178, 178, 178, 0.5);
+
+    --table-border: 1px solid #000;
+
+    --date_time_item_back: #535353;
+    --date_time_item_back-markadd: rgb(100, 2, 2);
+    --date_time_item_back-markdel: rgb(9, 28, 44);
+    --date_time_item_back-active: #9F091F;
+    --date_time_item_back-disabled: #353941;
+    --date_time_item_color-disabled: #676767;
 }
 
 html,
@@ -63,7 +71,6 @@ body {
 
 html {
     background-color: var(--bgcolor-content, white);
-    /* background-image: url(@/../imgs/rust.jpg); */
     width: 100%;
 }
 
@@ -72,6 +79,7 @@ body {
     font-size: var(--base-fontsize);
     line-height: var(--base-lineheight);
     text-align: center;
+    text-shadow: var(--fontshadow);
     color: var(--fontcolor-light, red);
 }
 
@@ -98,12 +106,15 @@ h3 {
 
 a:link {
     text-decoration: none;
+    color: var(--fontcolor-light);
+    text-shadow: var(--fontshadow);
 }
 
 a:visited,
 a:focus,
 a:hover,
 a:active {
+    color: black;
     text-decoration: underline;
 }
 
@@ -122,6 +133,14 @@ textarea {
     border: 1px solid #999;
     border-radius: var(--radius);
     width: auto;
+    color: var(--fontcolor-light);
+    text-shadow: var(--fontshadow);
+}
+
+label,
+label span {
+    color: var(--fontcolor-light);
+    text-shadow: var(--fontshadow);
 }
 
 input[type="number"]:invalid,
@@ -249,12 +268,21 @@ textarea:valid {
     border-radius: var(--radius);
 }
 
-.back {
-    background: var(--bgcolor-content);
-}
-
 .bgcolor {
     background-color: var(--bgcolor);
+    background-image: url("../../storage/app/public/images/back-1.webp");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.bgcontent {
+    background: repeat url("../../storage/app/public/images/back-4.jpg");
+    background-repeat: repeat;
+}
+
+.back {
+    background: center / contain repeat url("../../storage/app/public/images/back.jpg");
+    background-repeat: repeat;
 }
 
 .border {
@@ -461,10 +489,8 @@ textarea:valid {
 
 .he {
     font-family: var(--family_title);
-    border-radius: var(--radius);
     font-size: var(--big-fontsize);
     width: 100%;
-    background: var(--bgcolor-content) none repeat scroll 0% 0%;
     color: var(--fontcolor-light);
     z-index: 11;
 }
@@ -525,20 +551,12 @@ textarea:valid {
     background-size: 100% 100%;
 }
 
-.he_soz .he_soz-twitter::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231da1f2' d='M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z'/%3E%3C/svg%3E");
-}
-
-.he_soz .he_soz-fb::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%234267B2' d='M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z'/%3E%3C/svg%3E");
-}
-
 .he_soz .he_soz-vk::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%232787f5' d='M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%232d2d2d' d='M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z'/%3E%3C/svg%3E");
 }
 
 .he_soz .he_soz-tg::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%2327a7e7' d='M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%232d2d2d' d='M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z'/%3E%3C/svg%3E");
 }
 
 .he_soz .he_soz-youtube::before {
@@ -557,7 +575,7 @@ textarea:valid {
     border-radius: var(--radius);
     width: 100%;
     position: relative;
-    background-color: var(--bgcolor);
+    /* background-color: var(--bgcolor); */
 }
 
 .main_section h2 {
@@ -574,8 +592,9 @@ textarea:valid {
     padding: 1rem 1rem 1rem 1rem;
     width: 100%;
     max-width: 1640px;
-    border-radius: var(--radius);
-    background: var(--bgcolor-content) none repeat scroll 0% 0%;
+    background-color: var(--bgcolor-content) none repeat scroll 0% 0%;
+    background-image: url("../../storage/app/public/images/back.jpg");
+    background-repeat: repeat;
     box-shadow: var(--boxshadow);
 }
 
@@ -607,26 +626,20 @@ textarea:valid {
 }
 
 .main_section_article {
-    position: relative;
     width: 100%;
     max-width: calc((100%/4) - 4.3rem);
     display: inline-block;
     margin: 2rem 1rem 1rem 1rem;
     padding: 1rem 1rem 1rem 1rem;
-    border-radius: var(--radius);
     flex-grow: 1;
-    background: var(--bgcolor-content) none repeat scroll 0% 0%;
     box-shadow: var(--boxshadow);
     vertical-align: top;
 }
 
 .main_section_article .main_section_article_imgdiv {
     height: 60%;
-    position: relative;
     overflow: hidden;
-    margin-top: -2.5rem;
     border-radius: var(--radius);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 16px 38px -12px, rgba(0, 0, 0, 0.12) 0px 4px 25px 0px, rgba(0, 0, 0, 0.2) 0px 8px 10px -5px;
 }
 
 .main_section_article .main_section_article_imgdiv img {
@@ -844,9 +857,10 @@ a.gallery_a:hover img {
     cursor: pointer;
     border: none;
     outline: none;
-    border-radius: var(--radius);
-    background: var(--bgcolor-content);
+    background-color: var(--bgcolor-content);
+    background-image: url("../../storage/app/public/images/button_back.webp");
     background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: var(--boxshadow);
     overflow: hidden;
 }
@@ -854,7 +868,9 @@ a.gallery_a:hover img {
 .buttons:hover,
 .buttons:focus,
 .buttons:active {
+    color: black;
     background-color: var(--bgcolor-button-active);
+    box-shadow: none;
 }
 
 .buttons:disabled {
@@ -1147,18 +1163,26 @@ a.gallery_a:hover img {
     margin: 0.5rem;
     border-radius: var(--radius);
     background-color: var(--bgcolor-content);
+    background-image: url("../../storage/app/public/images/button_back.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: var(--boxshadow);
 }
 
 /* Checked */
 .form_radio_btn input[type=radio]:checked+span {
     background-color: var(--bgcolor-button-active);
+    background-image: url("../../storage/app/public/images/button_back_active.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: var(--boxshadow-active);
 }
 
 /* Hover */
 .form_radio_btn label span:hover {
-    color: #666;
+    color: black;
     background-color: var(--bgcolor-button-active);
+    box-shadow: none;
 }
 
 /* Disabled */
@@ -1190,6 +1214,9 @@ a.gallery_a:hover img {
     margin: 0.5rem 0.5rem;
     border-radius: var(--radius);
     background-color: var(--bgcolor-content);
+    background-image: url("../../storage/app/public/images/button_back.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: var(--boxshadow);
     transition: background 0.2s ease;
 }
@@ -1197,12 +1224,20 @@ a.gallery_a:hover img {
 /* Checked */
 .checkbox-btn input[type=checkbox]:checked+span {
     background-color: var(--bgcolor-button-active);
+    background-color: var(--bgcolor-button-active);
+    background-image: url("../../storage/app/public/images/button_back_active.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Hover */
 .checkbox-btn span:hover {
     color: #666;
     background-color: var(--bgcolor-button-active);
+    background-color: var(--bgcolor-button-active);
+    background-image: url("../../storage/app/public/images/button_back_active.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Active */

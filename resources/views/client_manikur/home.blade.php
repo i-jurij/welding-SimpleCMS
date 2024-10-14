@@ -51,7 +51,7 @@ ksort($sort_pages);
 unset($content['pages_menu'], $pages);
 ?>
     @foreach ($sort_pages as $pages)
-        <article class="main_section_article ">
+        <article class="main_section_article back">
             <a class="main_section_article_content_a" href="{{url('/'.$pages['alias'])}}" >
                 <div class="main_section_article_imgdiv">
                 <img src="{{asset('storage/'.$pages['img'])}}" alt="{{$pages['title']}}" class="main_section_article_imgdiv_img" />
@@ -66,7 +66,19 @@ unset($content['pages_menu'], $pages);
 		</article>
     @endforeach
 @else
-    No routes (pages)
+        <article class="main_section_article back">
+            <a class="main_section_article_content_a" href="" >
+                <div class="main_section_article_imgdiv">
+                <img src="{{asset('storage/images/ddd.jpg')}}" alt="No picture" class="main_section_article_imgdiv_img" />
+                </div>
+                <div class="main_section_article_content margin_top_1rem">
+                    <h2>Empty</h2>
+                    <span>
+                        No routes (pages)
+                    </span>
+                </div>
+            </a>
+		</article>
 @endif
 </div>
 @stop

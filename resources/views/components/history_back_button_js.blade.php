@@ -2,7 +2,7 @@
 <input
     type="image"
     class=" buttons"
-    src="{{ Vite::asset('resources/imgs/back.png') }}";
+    src="{{ Vite::asset('resources/imgs/back.webp') }}";
     onclick="window.history.back();window.location.reload();"
 />
 </div>

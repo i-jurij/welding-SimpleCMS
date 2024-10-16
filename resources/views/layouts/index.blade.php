@@ -22,7 +22,7 @@
         @include('layouts/header')
 
         <div class="main ">
-            <section class="main_section">
+            <section class="main_section mx-auto">
                 <div class="flex flex_top">
                      @if (url()->current() !== url()->route('client.home'))
                         <div class="content title">

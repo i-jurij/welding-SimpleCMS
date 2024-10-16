@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  class="bgcolor">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  class="bg_gray_gradient">
 
 <head>
   <meta charset="utf-8">

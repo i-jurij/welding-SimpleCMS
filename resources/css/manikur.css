@@ -42,11 +42,11 @@
     --input_bgcolor: rgb(212, 212, 212, 0.5);
     --bgcolor-button-active: rgb(101, 101, 101);
 
-    --fontcolor-light: #252525;
+    --fontcolor-light: #1e1e1e;
     --fontcolor-dark: #1CBADF;
 
     --fontshadow: rgba(255, 255, 255, 0.6) 1px 0 0;
-    --boxshadow: 0px 0px 5px 1px rgba(41, 41, 41, 0.5), 2px 2px 5px 1px rgba(41, 41, 41, 0.2);
+    --boxshadow: 0px 0px 2px 1px rgba(74, 76, 78, 0.3), 1px 1px 1px 1px rgba(41, 41, 41, 0.4);
     --boxshadow-active: rgba(0, 0, 0, 0.4) 1px 1px 3px 1px, rgba(0, 0, 0, 0.3) 1px 2px 2px -3px, rgba(0, 0, 0, 0.2) 1px 2px 6px 1px;
 
     --button-disabled-color: Maroon;
@@ -70,7 +70,7 @@ body {
 }
 
 html {
-    background-color: var(--bgcolor-content, white);
+    background-color: var(--bgcolor, grey);
     width: 100%;
 }
 
@@ -80,7 +80,7 @@ body {
     line-height: var(--base-lineheight);
     text-align: center;
     text-shadow: var(--fontshadow);
-    color: var(--fontcolor-light, red);
+    color: var(--fontcolor-light, black);
 }
 
 a,
@@ -114,7 +114,7 @@ a:visited,
 a:focus,
 a:hover,
 a:active {
-    color: black;
+    color: var(--fontcolor-light, black);
     text-decoration: underline;
 }
 
@@ -283,6 +283,20 @@ textarea:valid {
 .back {
     background: center / contain repeat url("../../storage/app/public/images/back.jpg");
     background-repeat: repeat;
+}
+
+.bg_gray_gradient {
+    background: -webkit-linear-gradient(360deg, #949494 10%, #efefef 360%);
+    background: linear-gradient(360deg, #949494 10%, #efefef 360%);
+    background-attachment: fixed;
+}
+
+.bg_dotted_small {
+    background: -moz-repeating-radial-gradient(circle at center, rgba(57, 57, 57, 0.2), rgba(0, 0, 0, 0.2) 1px, transparent 1px, grey 100%);
+    background: -webkit-repeating-radial-gradient(circle at center, rgba(57, 57, 57, 0.2), rgba(0, 0, 0, 0.2) 1px, grey 1px, grey 100%);
+    background: repeating-radial-gradient(circle at center, rgba(57, 57, 57, 0.2), rgba(0, 0, 0, 0.2) 1px, grey 1px, grey 100%);
+    background-size: 3px 3px;
+    background-attachment: fixed;
 }
 
 .border {
@@ -815,7 +829,7 @@ a.gallery_a:hover img {
     border-radius: var(--radius);
     padding: 1rem 1rem 1rem 1rem;
     background-color: var(--bgcolor);
-    color: white;
+    color: var(--fontcolor-light, black);
 }
 
 .table_body {
@@ -1232,7 +1246,7 @@ a.gallery_a:hover img {
 
 /* Hover */
 .checkbox-btn span:hover {
-    color: #666;
+    color: #000;
     background-color: var(--bgcolor-button-active);
     background-color: var(--bgcolor-button-active);
     background-image: url("../../storage/app/public/images/button_back_active.webp");
@@ -1340,7 +1354,7 @@ a.gallery_a:hover img {
 
 /* style for input file */
 .example-2 .btn-tertiary {
-    color: var(--fontcolor);
+    color: var(--fontcolor-light, black);
     padding: 0;
     line-height: 2rem;
     width: 21rem;
@@ -1354,7 +1368,7 @@ a.gallery_a:hover img {
 
 .example-2 .btn-tertiary:hover,
 .example-2 .btn-tertiary:focus {
-    color: #666;
+    color: black;
     background-color: var(--bgcolor-button-active);
 }
 

@@ -33,14 +33,14 @@ $robots = 'NOINDEX, NOFOLLOW';
                     <form action="{{$action_form}}" method="post" name="about_edit" id="about_edit" enctype="multipart/form-data">
                     @csrf
                         @if (!empty($abouts) && is_array($abouts) && (trim($status) === 'remove' || trim($status) === 'edit'))
-                            <p class="pad margin_bottom_1rem">Shoose article, then click "Submit"</p>
+                            <p class="p-1 mb-1">Shoose article, then click "Submit"</p>
                             <div id="inputt"></div>
                             @foreach ($abouts as $about)
                                 @php
                                     $img = imageFor($about['image']);
                                 @endphp
                                 <article class="main_section_article"  id="{{$about['id']}}plusplus{{sanitize($about['image'])}}">
-                                    <div class="main_section_article_imgdiv margin_bottom_1rem">
+                                    <div class="main_section_article_imgdiv mb-1">
                                         <img src="{{asset('storage'.DIRECTORY_SEPARATOR.$img)}}" alt="{{$about['title']}}" class="main_section_article_imgdiv_img" />
                                     </div>
                                     <div class="main_section_article_content">
@@ -53,8 +53,8 @@ $robots = 'NOINDEX, NOFOLLOW';
                         @elseif (trim($status) === 'create')
                             <div class="zapis_usluga" >
                                 <div id="inputs">
-                                <p class="back shad rad pad mar">Выберите изображение, название и текст для новой карточки страницы</p>
-                                <div class="about_form back shad rad pad mar display_inline_block" id="inp0">
+                                <p class="back shad rad p-1 m-1">Выберите изображение, название и текст для новой карточки страницы</p>
+                                <div class="about_form back shad rad p-1 m-1 display_inline_block" id="inp0">
                                     <label class="input-file">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="1024000" />
                                         <input type="file" id="f0" name="image_file[]" accept=".jpg,.jpeg,.png, image/jpeg, image/pjpeg, image/png" required />
@@ -73,13 +73,13 @@ $robots = 'NOINDEX, NOFOLLOW';
                                     </label>
                                 </div>
                                 </div>
-                                <div class="mar" id="aaf">
+                                <div class="m-1" id="aaf">
                                 <button class="buttons" type="button" >Добавить еще</button>
                                 </div>
                             </div>
                         @endif
 
-                        <div class="mar">
+                        <div class="m-1">
                             <input class="buttons" for="about_edit" type="submit" value="Submit">
                             <input class="buttons" for="about_edit" type="reset" value="Reset">
                         </div>
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $('div#aaf > button').on('click', function(){
     var id = parseInt($("div#inputs").find(".about_form:last").attr("id").slice(3))+1;
-    $("div#inputs").append('<div class="about_form back shad rad pad mar display_inline_block display_none" id="inp'+id+'">\
+    $("div#inputs").append('<div class="about_form back shad rad p-1 m-1 display_inline_block display_none" id="inp'+id+'">\
             <label class="input-file">\
               <input type="hidden" name="MAX_FILE_SIZE" value="1024000" />\
               <input type="file" id="f'+id+'" name="image_file[]" accept=".jpg,.jpeg,.png, .webp, image/jpeg, image/pjpeg, image/png, image/webp" required />\

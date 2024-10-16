@@ -1,6 +1,6 @@
 
-<header class="he stickyheader">
-    <div class="he_inner_div flex">
+<header class="he stickyheader back shad">
+    <div class="flex">
         @include('layouts.contacts')
     </div>
 </header>

@@ -30,15 +30,15 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
         </p>
     @elseif (!empty($res) && is_string($res)) <p class="content">{{$res}}</p>
     @else
-        <p class="back shad pad margin_rlb1 zapis_usluga">
+        <p class="back shad p-1 mb-1 mx-1 zapis_usluga">
             Не обещаем перезвонить вам сразу же. У нас нет колл-центра.<br />
             Перезвоним как только сможем.
         </p>
-        <div class="back shad rad pad margin_bottom_1rem form_recall_div">
+        <div class="back shad rad p-1 mb-1 form_recall_div">
             <form action="{{$action}}" method="post" class="form-recall-main" id="recall_one">
                 @csrf
                 <div class="">
-                    <div class="form-group padt1">
+                    <div class="form-group pt-1">
                         <div class="">
                             <div id="error"><small></small></div>
                             <label class="zapis_usluga">Ваше имя:
@@ -65,7 +65,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                         </div>
                     </div>
 
-                    <div class="margin_bottom_1rem capcha" id="captcha_div"></div>
+                    <div class="mb-1 capcha" id="captcha_div"></div>
 
                     <div class="form-group" id="sr_but">
                         <button class="buttons form-recall-submit" >Отправить</button>
@@ -74,7 +74,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     <div class="clear"></div>
                 </div>
 
-                <div class="margin_top_1rem">
+                <div class="mt-1">
                     <p class="pers">
                     Отправляя данную форму, вы даете согласие на
                     <br>
@@ -171,10 +171,10 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     }
 
                     if (strings.length) {
-                        $('#captcha_div').before('<div class="margin_top_1rem mes"><p>Выберите, пожалуйста, среди других этот рисунок:</p>\
-                                        <p class="div_center padt1">'+imgs[truee]+'</p></div>');
+                        $('#captcha_div').before('<div class="mt-1 mes"><p>Выберите, пожалуйста, среди других этот рисунок:</p>\
+                                        <p class="div_center pt-1">'+imgs[truee]+'</p></div>');
 
-                        $('#captcha_div').addClass('pad');
+                        $('#captcha_div').addClass('p-1');
                         $('#captcha_div').append('<div class="imgs div_center" style="width:21rem;"></div>');
                         for (var i = 0; i < strings.length; i++)
                         {
@@ -211,7 +211,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     });
                 } else {
                     // laravel captcha
-                    $('#sr_but').before('<div class="form-group{{ $errors->has("captcha") ? " has-error" : "" }} margin_bottom_1rem">\
+                    $('#sr_but').before('<div class="form-group{{ $errors->has("captcha") ? " has-error" : "" }} mb-1">\
                             <p id=\"mes\"></p>\
                             <div>\
                                 <div class=\"capcha2\">\

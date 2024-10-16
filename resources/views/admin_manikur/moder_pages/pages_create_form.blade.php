@@ -16,7 +16,7 @@ if ((bool) mb_strstr(url()->current(), 'service_page')) {
 
 <div class="content">
     <p style="margin:0;" id="p_pro">Показать/скрыть справку</p>
-    <p class="margin_rlb1 text_left display_none" id="pro">
+    <p class="mx-1 mb-1 text_left display_none" id="pro">
         Создание страниц:<br />
         <b>File upload</b> - изображение страницы в меню на главной странице, вес - до 1МБ, формат - jpg, png, webp.<br />
         Данные для шаблона страницы:<br />
@@ -36,18 +36,18 @@ if ((bool) mb_strstr(url()->current(), 'service_page')) {
 
 <div class=" ">
 @if (!empty($img_res)) <p class="content">MESSAGE: {!! $img_res !!}</p> @endif
-    <div class="margin_bottom_1rem" style="max-width:55rem;">
+    <div class="mb-1" style="max-width:55rem;">
                 <form action="{{url()->route('admin.pages.store')}}" method="post" enctype="multipart/form-data" name="create_page" id="create_page" class="form_page_add">
                 @csrf
-                    <div class="back shad rad pad margin_rlb1">
-                        <p class="margin_rlb1">Выберите файлы</p>
-                        <label class="display_inline_block margin_bottom_1rem">Файл изображения страницы (jpg, png, webp, < 1MB):<br />
+                    <div class="back shad rad p-1 mx-1 mb-1">
+                        <p class="mx-1 mb-1">Выберите файлы</p>
+                        <label class="display_inline_block mb-1">Файл изображения страницы (jpg, png, webp, < 1MB):<br />
                             <input type="hidden" name="MAX_FILE_SIZE" value="1024000" />
                             <input type="file" name="picture" accept="image/jpeg, image/pjpeg, image/png, image/webp" />
                         </label>
                     </div>
-                    <div class="margin_bottom_1rem back shad rad pad mar">
-                        <p class="margin_rlb1">Введите данные (alias и title обязательны)</p>
+                    <div class="mb-1 back shad rad p-1 m-1">
+                        <p class="mx-1 mb-1">Введите данные (alias и title обязательны)</p>
 <?php
 if (!empty($fields)) {
     foreach ($fields as $key => $val) {
@@ -104,7 +104,7 @@ if (!empty($fields)) {
                 $input_end = ' />';
             }
 
-            echo $br.'<label class="display_inline_block margin_bottom_1rem">
+            echo $br.'<label class="display_inline_block mb-1">
                         <span class="'.$class_hidden.'"> '.$key.' '.$star.' ('.$val->getLength().')</span><br />'
                         .$input_start.' name="'.$key.'" maxlength="'.$val->getLength().'" value="'.$value.'" '.$pattern.' '.$required.$input_end.
                     '</label>'.$br.PHP_EOL;

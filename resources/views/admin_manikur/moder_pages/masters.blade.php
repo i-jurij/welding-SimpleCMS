@@ -69,10 +69,10 @@ $robots = 'NOINDEX, NOFOLLOW';
                                                     list($cat_id, $cat_name) = explode('#', $ke);
                                                 @endphp
                                                 @if ($cat_name !== 'page_serv')
-                                                <li class="margin_top_1rem">{{$cat_name}}: </li>
+                                                <li class="mt-1">{{$cat_name}}: </li>
                                                 <ul>
                                                     @foreach ($cats as $k => $serv)
-                                                    <li class="margin_rl1">{{$serv}}</li>
+                                                    <li class="mx-1">{{$serv}}</li>
                                                     @endforeach
                                                 </ul>
                                                 @endif
@@ -83,10 +83,10 @@ $robots = 'NOINDEX, NOFOLLOW';
                                                     if ($cat_name === 'page_serv') $cat_name = 'Other';
                                                 @endphp
                                                 @if ($cat_name === 'Other')
-                                                <li class="margin_top_1rem">{{$cat_name}}</li>
+                                                <li class="mt-1">{{$cat_name}}</li>
                                                 <ul>
                                                     @foreach ($cats as $k => $serv)
-                                                    <li class="margin_rl1">{{$serv}}</li>
+                                                    <li class="mx-1">{{$serv}}</li>
                                                     @endforeach
                                                 </ul>
                                                 @endif
@@ -166,10 +166,10 @@ $robots = 'NOINDEX, NOFOLLOW';
                                                     list($cat_id, $cat_name) = explode('#', $ke);
                                                 @endphp
                                                 @if ($cat_name !== 'page_serv')
-                                                <li class="margin_top_1rem">{{$cat_name}}: </li>
+                                                <li class="mt-1">{{$cat_name}}: </li>
                                                 <ul>
                                                     @foreach ($cats as $k => $serv)
-                                                    <li class="margin_rl1">{{$serv}}</li>
+                                                    <li class="mx-1">{{$serv}}</li>
                                                     @endforeach
                                                 </ul>
                                                 @endif
@@ -180,10 +180,10 @@ $robots = 'NOINDEX, NOFOLLOW';
                                                     if ($cat_name === 'page_serv') $cat_name = 'Other';
                                                 @endphp
                                                 @if ($cat_name === 'Other')
-                                                <li class="margin_top_1rem">{{$cat_name}}</li>
+                                                <li class="mt-1">{{$cat_name}}</li>
                                                 <ul>
                                                     @foreach ($cats as $k => $serv)
-                                                    <li class="margin_rl1">{{$serv}}</li>
+                                                    <li class="mx-1">{{$serv}}</li>
                                                     @endforeach
                                                 </ul>
                                                 @endif

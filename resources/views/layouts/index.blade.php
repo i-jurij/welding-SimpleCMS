@@ -30,7 +30,7 @@
                         </div>
                     @endif
                     @if ($errors->any())
-                        <div class="zapis_usluga back shad pad margin_rlb1 alert alert-danger error">
+                        <div class="zapis_usluga back shad p-1 my-1 alert alert-danger error">
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     @if (is_array($error))

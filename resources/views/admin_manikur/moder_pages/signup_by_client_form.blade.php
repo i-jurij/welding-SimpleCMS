@@ -10,7 +10,7 @@ $uv = '';
 @section("content")
 
 <div class="content" id="by_client">
-    <p class="margin+tp+1rem">Search client by phone number:</p>
+    <p class="">Search client by phone number:</p>
     <form action="{{url()->route('admin.signup.by_client.post')}}" method="post" class="form-recall-main" id="find_client">
     @csrf
         <div class="">

@@ -26,7 +26,7 @@ $fmt = new IntlDateFormatter(
 
     <div class="content">
 
-        <div class="margin_bottom_1rem">
+        <div class="mb-1">
             Выберите номера по которым уже перезвонили, поставив галочку. <br />
             Нажмите кнопку "Удалить", чтобы убрать их из списка,<br />
             или "Сбросить", чтобы снять выбранное.
@@ -34,7 +34,7 @@ $fmt = new IntlDateFormatter(
 
         <form action="" method="post" class="">
             @csrf
-            <div class="margintb05">
+            <div class="my-0.5">
             <input type="submit" class="buttons" name="submit" value="Удалить"/>
             <input type="reset" class="buttons" value="Cбросить"/>
             </div>
@@ -42,7 +42,7 @@ $fmt = new IntlDateFormatter(
                 @foreach ($callbacks as $cb)
                     <article class="adm_recall_article ">
                         <div class="">{{$fmt->format($cb->created_at)}}</div>
-                            <div class="margin_botom_1rem">
+                            <div class="mb-1">
                                 <table class="text_left">
                                     <tr>
                                         <td>Имя:</td>
@@ -57,8 +57,8 @@ $fmt = new IntlDateFormatter(
                                         <td>&nbsp;{{$cb->send}}</td>
                                     </tr>
                                 </table>
-                                <p class="margin_top_1rem">
-                                    <label class="shad pad"><input type="checkbox" name="id[]" value="{{$cb->id}}" /> Перезвонили</label>
+                                <p class="mt-1">
+                                    <label class="shad p-1"><input type="checkbox" name="id[]" value="{{$cb->id}}" /> Перезвонили</label>
                                 </p>
                             </div>
                     </article>

@@ -20,7 +20,7 @@ $filesize = 1;
                         @foreach ($abouts as $about)
                             <div class="zapis_usluga" >
                                 <p class="">Измените изображение, название и текст карточки страницы</p>
-                                <div class="about_form back shad rad pad mar display_inline_block" id="inp0">
+                                <div class="about_form back shad rad p-1 m-1 display_inline_block" id="inp0">
                                     <input type="hidden" name="id[]" value="{{$about['id']}}" />
                                     <label class="input-file">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="{{$filesize*1024000}}" />
@@ -42,7 +42,7 @@ $filesize = 1;
                             </div>
                         @endforeach
 
-                        <div class="mar">
+                        <div class="m-1">
                             <input class="buttons" form="about_update" type="submit" value="Submit">
                             <input class="buttons" form="about_update" type="reset" value="Reset">
                         </div>

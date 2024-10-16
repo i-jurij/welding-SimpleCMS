@@ -14,7 +14,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
     $robots = "INDEX, FOLLOW";
     $content['content'] = "CONTENT FOR DEL IN FUTURE";
 }
-    $dismiss_signup = ' <p class=\"pad\">\
+    $dismiss_signup = ' <p class=\"p-1\">\
                             <small>\
                                 Если нужно записаться на то же время к другому мастеру или на другую услугу:\
                                 <br>отмените запись и запишитесь заново.\
@@ -34,7 +34,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
     @if (!empty(session('res')))
         @if (is_array(session('res')))
             <div class="content">
-                <h3 class="pad">{{session('res')['client_name']}}</h3>
+                <h3 class="p-1">{{session('res')['client_name']}}</h3>
                 <p><b>Вы записались на:</b></p>
                 <div class="table_body" style="border-collapse: collapse;">
                     <div class="table_row">
@@ -65,7 +65,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 <h3>Спасибо за ваш выбор!</h3>
             </div>
         @elseif (is_string(session('res')))
-            <div class="content"><p class="error pad">{{session('res')}}</p></div>
+            <div class="content"><p class="error p-1">{{session('res')}}</p></div>
         @elseif (session('res') === false)
             <p class="error">
                 Warning!<br>
@@ -108,19 +108,19 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 @csrf
                 <div class="choice" id="give_a_phone">
                     <div class="" id="form_phone">
-                    <h3 class="back shad rad pad">Введите свое имя и номер телефона для связи</h3>
-                        <div class="form-group pad margin_bottom_1rem">
+                    <h3 class="back shad rad p-1">Введите свое имя и номер телефона для связи</h3>
+                        <div class="form-group p-1 mb-1">
                             <div class="">
                                 <div class="error" id="phone_error"><small></small></div>
                                 <label class="zapis_usluga">
-                                    <p class="pad">Ваше имя (одно слово, только буквы):</p>
+                                    <p class="p-1">Ваше имя (одно слово, только буквы):</p>
                                     <input type="text" title="Ваше имя (одно слово, только буквы)" placeholder="Не обязательно заполнять" pattern="^([а-яА-ЯёЁa-zA-Z]+)?$" name="zapis_name" id="zapis_name" maxlength="255" value="{{ old('name') }}" />
                                 </label>
                                 <br>
                                 <input type="text" placeholder="Ваша фамилия" name="last_name" id="last_name" maxlength="50" />
                                 <p class="error" id="tel_mes"></p>
                                 <label class="zapis_usluga">
-                                    <p class="pad">Номер телефона для связи с вами:</p>
+                                    <p class="p-1">Номер телефона для связи с вами:</p>
                                     <input type="tel" name="zapis_phone_number"  id="number" class="number"
                                     title="Формат: +7 999 999 99 99" placeholder="+7 ___ ___ __ __"
                                     minlength="6" maxlength="17"
@@ -130,7 +130,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                                 </label>
                                 <br>
                                 <label class="zapis_usluga display_none" id="zapis_password_label">
-                                    <p class="pad">Введите пароль:</small></p>
+                                    <p class="p-1">Введите пароль:</small></p>
                                     <input type="text" title="Пароль (для управления записями)" placeholder="Пароль" name="client_password" id="client_password" minlength="8" maxlength="255" />
                                 </label>
                             </div>
@@ -139,7 +139,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 </div>
 
                 <div class="choice display_none" id="services_choice">
-                    <h3 class="back shad rad pad margin_rlb1">Выберите услугу</h3>
+                    <h3 class="back shad rad p-1 mb-1 mx-1">Выберите услугу</h3>
                     <div class="zapis_usluga page_buttons">
                         @foreach ($data['serv'] as $page => $cat_arr)
                             <button type="button" class="buttons zapis_usluga_buttons masters_edit vertaligntop" id="{{translit_to_lat(sanitize($page))}}">
@@ -197,13 +197,13 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 
                 <div class="choice display_none" id="master_choice"></div>
 
-                <h3 class="back shad rad pad margin_rlb1 display_none" id="timeh3">Выберите время</h3>
-                <div class="choice display_none margin_bottom_1rem" id="time_choice"></div>
+                <h3 class="back shad rad p-1 mb-1 mx-1 display_none" id="timeh3">Выберите время</h3>
+                <div class="choice display_none mb-1" id="time_choice"></div>
                 <div class="display_none" id="occupied"></div>
                 <div class="choice display_none" id="zapis_end"></div>
             </form>
 
-            <div class="zapis_usluga margin_bottom_1rem" id="buttons_div">
+            <div class="zapis_usluga mb-1" id="buttons_div">
                 <button class="buttons" id="dismiss_order" disabled>Ваши записи</button>
                 <button type="button" class="buttons" id="button_back" value="" disabled >Назад</button>
                 <button type="button" class="buttons" id="button_next" value="" disabled >Записаться</button>
@@ -316,13 +316,13 @@ document.addEventListener('DOMContentLoaded', function () {
             res.client_name = true;
         } else {
             res.client_name = false;
-            res.error = '<p class="error pad" >Имя должно состоять только из букв.</p>';
+            res.error = '<p class="error p-1" >Имя должно состоять только из букв.</p>';
         }
         if (phone_regex.test(client_phone)) {
             res.client_phone = true;
         } else {
             res.client_phone = false;
-            res.error += '<p class="error pad" >Неверно введен номер телефона.</p>';
+            res.error += '<p class="error p-1" >Неверно введен номер телефона.</p>';
         }
 
         return res;
@@ -427,7 +427,7 @@ $(function() {
             },
     		success: function(result){
                 if (result.masters.length > 0) {
-                    let mst = '<h3 class="back shad rad pad margin_rlb1">Выберите специалиста</h3>\
+                    let mst = '<h3 class="back shad rad p-1 mb-1 mx-1">Выберите специалиста</h3>\
                                 <div class="radio-group flex">';
 
                         result.masters.forEach(element => {
@@ -436,7 +436,7 @@ $(function() {
                                     <div class="main_section_article_imgdiv" style="background-color: var(--bgcolor-content);">\
                                         <img src="{{asset("storage")}}/'+element.master_photo+'" alt="Фото '+element.master_fam+'" class="main_section_article_imgdiv_img" />\
                                     </div>\
-                                    <div class="main_section_article_content margin_top_1rem">\
+                                    <div class="main_section_article_content mt-1">\
                                         <h3 id="'+element.id+'">'+element.master_name+' '+element.master_fam+'</h3>\
                                     </div>\
                                 </article>';
@@ -459,7 +459,7 @@ $(function() {
                         $('#button_next').focus();
                     });
                 } else {
-                    $('#master_choice').html('<p class="pad">No masters for this service available.</p>');
+                    $('#master_choice').html('<p class="p-1">No masters for this service available.</p>');
                     //click event on button next
                     setTimeout(function(){
                         $("#button_next").click();
@@ -468,19 +468,19 @@ $(function() {
 
     		},
             error: function(data) {
-                $('#master_choice').html('<p class="pad">Извините, где-то возникла ошибка :(</p>');
+                $('#master_choice').html('<p class="p-1">Извините, где-то возникла ошибка :(</p>');
             },
             cache: false
     	});
     }
-    else if ( ( $('#master_choice #master').val() || $('#master_choice').html() == '<p class="pad">No masters for this service available.</p>') && $(this).val() == 'time_choice' )
+    else if ( ( $('#master_choice #master').val() || $('#master_choice').html() == '<p class="p-1">No masters for this service available.</p>') && $(this).val() == 'time_choice' )
     {
         $('#master_choice').hide();
         $('#timeh3').show();
         $('#time_choice').show();
         $(this).val('zapis_end');
 
-        if ($('#master_choice').html() == '<p class="pad">No masters for this service available.</p>') {
+        if ($('#master_choice').html() == '<p class="p-1">No masters for this service available.</p>') {
                 $('#button_back').val('services_choice');
         } else {
             $('#button_back').val('master_choice');
@@ -544,7 +544,7 @@ $(function() {
                     }
 
                     //$('#occupied').hide();
-                    $('#zapis_end').show().addClass('margin_rlb1').html( '<h3 class="pad">'+client_name+' </h3>\
+                    $('#zapis_end').show().addClass('mb-1 mx-1').html( '<h3 class="p-1">'+client_name+' </h3>\
                                     <p id="zap_na">Вы записываетесь на:</p>\
                                     <div class="table_body text_left div_center" >\
                                         <div class="table_row">\
@@ -603,25 +603,25 @@ $(function() {
                     let dismiss_signup = "{!!$dismiss_signup!!}";
 
                     if (responce.hasOwnProperty('client_signup')) {
-                        $('#zapis_end').show().addClass('margin_rlb1').html(client_signup+dismiss_signup);
+                        $('#zapis_end').show().addClass('mb-1 mx-1').html(client_signup+dismiss_signup);
                     }
 
                     if (responce.hasOwnProperty('master_busy')) {
-                        $('#zapis_end').show().addClass('margin_rlb1').html( "<p class=\"pad\">"+my_date_string(time)+"\
+                        $('#zapis_end').show().addClass('mb-1 mx-1').html( "<p class=\"p-1\">"+my_date_string(time)+"\
                                     <br /> недавно были заняты другим клиентом.<br />\
                                     Выберите, пожалуйста другое время или другого мастера.\
                                 </p>");
                     }
 
                     if (responce.hasOwnProperty('all_master_busy')) {
-                        $('#zapis_end').show().addClass('margin_rlb1').html( "<p class=\"pad\">"+my_date_string(time)+"\
+                        $('#zapis_end').show().addClass('mb-1 mx-1').html( "<p class=\"p-1\">"+my_date_string(time)+"\
                                     <br /> все мастера заняты.<br />Выберите, пожалуйста другое время.\
                                 </p>");
                     }
                 }
     		},
             error: function(data) {
-                $('#zapis_end').show().addClass('margin_rlb1').html( '<p class="pad">Извините, где-то возникла ошибка :(</p>)');
+                $('#zapis_end').show().addClass('mb-1 mx-1').html( '<p class="p-1">Извините, где-то возникла ошибка :(</p>)');
             },
             cache: false
     	});
@@ -646,7 +646,7 @@ $(function() {
                 //console.dir(data);
             },
             error: function(data) {
-                let res = '<p class="error pad">Ошибка передачи данных. Повторите ввод данных, пожалуйста. :(</p>)';
+                let res = '<p class="error p-1">Ошибка передачи данных. Повторите ввод данных, пожалуйста. :(</p>)';
                 $('#zapis_end').html(res);
             },
             cache: false
@@ -673,7 +673,7 @@ $(function() {
         } else if ( $(this).prop('id') == 'services_choice') {
             $('#button_next').val('master_next');
             $('#button_back').val('give_a_phone');
-            if ($('#master_choice').html() == '<p class="pad">No masters for this service available.</p>') {
+            if ($('#master_choice').html() == '<p class="p-1">No masters for this service available.</p>') {
                 $('#timeh3').hide();
             }
         } else if ($(this).prop('id') == 'master_choice') {
@@ -686,7 +686,7 @@ $(function() {
                 dissmiss_input.remove();
             }
             $('#button_next').val('zapis_end');
-            if ($('#master_choice').html() == '<p class="pad">No masters for this service available.</p>') {
+            if ($('#master_choice').html() == '<p class="p-1">No masters for this service available.</p>') {
                 $('#button_back').val('services_choice');
             } else {
                 $('#button_back').val('master_choice');

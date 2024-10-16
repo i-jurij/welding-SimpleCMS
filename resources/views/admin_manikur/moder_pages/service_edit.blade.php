@@ -30,7 +30,7 @@ if (!empty($data['res'])) {
                     <div class="" id="cats_add">
                         <input type="hidden" name="page_id" value="'.$data['page_id'].'#'.$data['page_title'].'" />
                         <p class="">Выберите изображение, название и описание категории, нажмите Далее</p>
-                        <div class="about_form back shad rad pad mar display_inline_block" id="cats0">
+                        <div class="about_form back shad rad p-1 m-1 display_inline_block" id="cats0">
                             <label class="input-file">
                                 <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
                                 <input type="file" id="fcats0" name="cats_img[]" accept=".jpg,.jpeg,.png, image/jpeg, image/pjpeg, image/png" required />
@@ -49,7 +49,7 @@ if (!empty($data['res'])) {
                             </label>
                         </div>
                     </div>
-                    <div class="mar " id="">
+                    <div class="m-1 " id="">
                         <button class="buttons add" type="button" value="cats" onclick="add(this);">Добавить еще</button>
                     </div>
                 </div>';
@@ -76,7 +76,7 @@ if (!empty($data['res'])) {
                     <div class="" id="serv_add">
                         <input type="hidden" name="page_id" value="'.$data['page_id'].'#'.$data['page_title'].'" />
                         <p class="">Выберите изображение, название и описание услуги, нажмите Далее</p>
-                        <div class="about_form back shad rad pad mar display_inline_block" id="serv0">
+                        <div class="about_form back shad rad p-1 m-1 display_inline_block" id="serv0">
                             <label class="input-file">
                                 <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
                                 <input type="file" id="fserv0" name="serv_img[]" accept=".jpg,.jpeg,.png, image/jpeg, image/pjpeg, image/png" />
@@ -105,13 +105,13 @@ if (!empty($data['res'])) {
                             </label>
                         </div>
                     </div>
-                    <div class="mar " id="">
+                    <div class="m-1 " id="">
                             <button class="buttons add" type="button" value="serv" onclick="add(this);">Добавить еще</button>
                     </div>
                 </div>    ';
     } elseif ($data['action'] === 'cats_del') {
         echo '<div class="">
-                <p class="margin_bottom_1rem">Выберите категории для удаления, нажмите Далее</p>
+                <p class="mb-1">Выберите категории для удаления, нажмите Далее</p>
                 <input type="hidden" name="page_id" value="'.$data['page_id'].'" />';
 
         if (!empty($data['page_cats'])) {
@@ -127,17 +127,17 @@ if (!empty($data['res'])) {
         echo '</div>';
     } elseif ($data['action'] === 'serv_del') {
         echo ' <div class="">
-                    <p class="mb2 margin_bottom_1rem"><b>Услуги в категориях:</b></p>
+                    <p class="mb2 mb-1"><b>Услуги в категориях:</b></p>
                     <div class="" style="align-items:stretch;" id="cat_serv_del_p">';
         if (!empty($data['page_cats'])) {
             foreach ($data['page_cats'] as $value) {
                 echo '<div class="mb2">
-                                    <p class="margin_bottom_1rem">Категория <b>"'.$value['name'].'"</b>:</p>';
+                                    <p class="mb-1">Категория <b>"'.$value['name'].'"</b>:</p>';
                 if (!empty($data['page_cats_serv'])) {
                     $cs = '';
                     foreach ($data['page_cats_serv'] as $serv) {
                         if ($serv['category_id'] === $value['id']) {
-                            $cs .= '  <label class="display_inline_block margin_bottom_1rem shad rad pad">
+                            $cs .= '  <label class="display_inline_block mb-1 shad rad p-1">
                                                     <input type="checkbox" name="serv_del[]" value="'.$serv['id'].'#'.$serv['name'].'#'.$serv['page_id'].'#'.$serv['category_id'].$serv['image'].'">
                                                     <span>'.$serv['name'].'</span>
                                                 </label>';
@@ -159,11 +159,11 @@ if (!empty($data['res'])) {
         echo '     </div>
                 </div>
                 <div class="mb2">
-                    <p class="margin_bottom_1rem"><b>Услуги вне категорий:</b></p>
+                    <p class="mb-1"><b>Услуги вне категорий:</b></p>
                     <div class="" id="page_serv_del_p">';
         if (!empty($data['page_serv'])) {
             foreach ($data['page_serv'] as $pserv) {
-                echo '  <label class="display_inline_block margin_bottom_1rem shad rad pad">
+                echo '  <label class="display_inline_block mb-1 shad rad p-1">
                                         <input type="checkbox" name="serv_del[]" value="'.$pserv['id'].'#'.$pserv['name'].'#'.$pserv['page_id'].'#0#'.$pserv['image'].'">
                                         <span>'.$pserv['name'].'</span>
                                     </label>';
@@ -177,10 +177,10 @@ if (!empty($data['res'])) {
 } else {
     // вывод списка страниц
     if (!empty($data['service_page'])) {
-        echo '<div class="form_radio_btn margin_bottom_1rem" style="width:85%;">
-                    <p class="margin_bottom_1rem">Выберите страницу для редактирования:</p>';
+        echo '<div class="form_radio_btn mb-1" style="width:85%;">
+                    <p class="mb-1">Выберите страницу для редактирования:</p>';
         if (is_string($data['service_page'])) {
-            echo '<p class="shad rad pad">'.$data['service_page'].'</p>';
+            echo '<p class="shad rad p-1">'.$data['service_page'].'</p>';
         } elseif (is_array($data['service_page'])) {
             foreach ($data['service_page'] as $value) {
                 if ($value['service_page'] === 'yes') {
@@ -193,8 +193,8 @@ if (!empty($data['res'])) {
         }
         echo '</div>';
     }
-    echo ' <div class="form_radio_btn margin_bottom_1rem">
-                <p class="margin_bottom_1rem">Выберите действие:</p>
+    echo ' <div class="form_radio_btn mb-1">
+                <p class="mb-1">Выберите действие:</p>
                 <label>
                     <input type="radio" name="action" value="cats_add" required/>
                     <span>Добавить категории</span>
@@ -215,7 +215,7 @@ if (!empty($data['res'])) {
 }
 // include_once APPROOT.DS."view".DS."js_back.html";
 ?>
-        <div class="margintb1 <?php echo $dn; ?>" id="form_buttons">
+        <div class="my-1 <?php echo $dn; ?>" id="form_buttons">
             <button type="submit" name="submit" class="buttons" form="change_page_form" />Далее</button>
             <input type="reset" class="buttons" form="change_page_form" value="Сбросить" />
         </div>
@@ -273,7 +273,7 @@ if (!empty($data['res'])) {
             }
         }
         // add fields for input
-        $("div#" + shoose + '_add').append('<div class="about_form back shad rad pad mar display_inline_block display_none" id="' + shoose + id + '">\
+        $("div#" + shoose + '_add').append('<div class="about_form back shad rad p-1 m-1 display_inline_block display_none" id="' + shoose + id + '">\
         ' + file + '\
         <label ><p>Введите название ' + name + ' (до 100 символов)</p>\
             <p>\

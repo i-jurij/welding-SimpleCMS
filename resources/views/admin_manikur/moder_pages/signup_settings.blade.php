@@ -38,7 +38,7 @@ $robots = "NOINDEX, NOFOLLOW";
     @else
         <div class="content">
             <p style="margin:0;" id="p_pro">Показать/скрыть справку</p>
-            <p class="margin_rlb1 text_left display_none" id="pro">
+            <p class="mb-1 mx-1 text_left display_none" id="pro">
                 <br>
                 Заполняйте ВСЕ поля! За исключением праздничных дней (но нужно выбрать один из вариантов: запонить вручную или загрузить с сервера).
                 <br><br>
@@ -184,7 +184,7 @@ $robots = "NOINDEX, NOFOLLOW";
                 </tbody>
             </table>
 
-            <div class="form-element mar">
+            <div class="form-element m-1">
                 <button type="submit" form="signup_settings_form" class="buttons" id="signup_settings_submit">Save</button>
                 <button type="reset" form="signup_settings_form" class="buttons" id="signup_settings_reset">Reset</button>
             </div>

@@ -200,66 +200,6 @@ textarea:valid {
     clear: both;
 }
 
-.margin05 {
-    margin: 0.5rem;
-}
-
-.margintb05 {
-    margin: 0.5rem auto;
-}
-
-.margintb05rl1 {
-    margin: 0.5rem 1rem;
-}
-
-.margintb1rl05 {
-    margin: 1rem 0.5rem;
-}
-
-.margint0b1rl05 {
-    margin: 0 0.5rem 1rem 0.5rem;
-}
-
-.margint0b0rlauto {
-    margin: 0 auto 0 auto;
-}
-
-.margintb1 {
-    margin: 1rem auto;
-}
-
-.margin_rlb1 {
-    margin: 0 1rem 1rem 1rem;
-}
-
-.margin_rl1 {
-    margin: auto 1rem;
-}
-
-.margin_l2 {
-    margin: auto auto auto 2rem;
-}
-
-.margin_r2 {
-    margin: auto 2rem auto auto;
-}
-
-.margin_bottom_1rem {
-    margin: 0 auto 1rem auto;
-}
-
-.mb2 {
-    margin: 0 auto 2rem auto;
-}
-
-.mt1b2 {
-    margin: 1rem auto 2rem auto;
-}
-
-.margin_top_1rem {
-    margin: 1rem auto 0 auto;
-}
-
 .shad {
     box-shadow: var(--boxshadow);
 }
@@ -310,56 +250,6 @@ textarea:valid {
 .selected_shad {
     box-shadow: rgba(255, 0, 0, 0.9) 0px 0px 4px 4px;
 }
-
-.mar_pad {
-    padding: 1rem;
-    margin: 1rem;
-}
-
-.mar {
-    margin: 1rem;
-}
-
-.pad {
-    padding: 1rem;
-}
-
-.pad2 {
-    padding: 2rem;
-}
-
-.padtb1 {
-    padding: 1rem 0;
-}
-
-.padt1 {
-    padding: 1rem 0 0 0;
-}
-
-.padrl1 {
-    padding: 0 1rem;
-}
-
-.padrl2 {
-    padding: 0 2rem;
-}
-
-.padl2 {
-    padding: 0 0 0 2rem;
-}
-
-.padrlb1 {
-    padding: 0 1rem 1rem 1rem;
-}
-
-.pad05 {
-    padding: 0.5rem;
-}
-
-.pad_tb05_rl1 {
-    padding: 0.5rem 1rem;
-}
-
 
 .justify {
     text-align: justify;
@@ -518,7 +408,6 @@ textarea:valid {
 .he_soz {
     display: inline-block;
     text-align: center;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
     line-height: normal;
 }
 
@@ -532,7 +421,6 @@ textarea:valid {
 
 .he_soz {
     padding: 0.3rem 0 0.3rem 0;
-    margin-top: 0.5rem;
 }
 
 .he_soz a {

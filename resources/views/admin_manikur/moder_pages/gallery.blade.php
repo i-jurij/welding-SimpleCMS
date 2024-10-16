@@ -25,7 +25,7 @@ $robots = "NOINDEX, NOFOLLOW";
         ?>
     <form action="<?php echo route('admin.gallery.go'); ?>" method="post" name="gallery_edit" id="gallery_edit" class="back shad rad margin_rlb1" enctype="multipart/form-data">
     @csrf
-    <div class="pad margin_bottom_1rem display_none" id="div_add_photo">
+    <div class="p-1 mb-1 display_none" id="div_add_photo">
         <h3 class=" ">Добавить</h3>
         <div class="">
         <label ><p>Выберите фото весом до 3Мб</p>
@@ -37,7 +37,7 @@ $robots = "NOINDEX, NOFOLLOW";
         </div>
     </div>
 
-    <div class="pad margin_bottom_1rem display_none" id="div_del_photo">
+    <div class="p-1 mb-1 display_none" id="div_del_photo">
         <h3 class=" ">Удалить</h3>
         <p>Выберите фото для удаления</p>
         <div class="gallery flex ">
@@ -50,7 +50,7 @@ $robots = "NOINDEX, NOFOLLOW";
             if (is_file($dir.DIRECTORY_SEPARATOR.$file)) {
                 // $files[] = basename($file);
                 // $id = pathinfo($file, PATHINFO_FILENAME);
-                echo '<div class="photo_del margin05 shad rad" id="'.$dir.DIRECTORY_SEPARATOR.$file.'">
+                echo '<div class="photo_del m-0.5 shad rad" id="'.$dir.DIRECTORY_SEPARATOR.$file.'">
                         <img src="'.asset('storage'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'gallery'.DIRECTORY_SEPARATOR.$file).'" alt="photo" class=" rad" width="'.$width.'" height="'.$height.'" />
                     </div>';
             }
@@ -60,7 +60,7 @@ $robots = "NOINDEX, NOFOLLOW";
         </div>
     </div>
 
-    <div class="pad margin_bottom_1rem display_none" id="div_change_link">
+    <div class="p-1 mb-1 display_none" id="div_change_link">
         <h3 class=" ">Изменить ссылку на каталог с фото</h3>
         <div class="">
         <label ><p>Вставьте адрес ссылки</p>
@@ -78,7 +78,7 @@ $robots = "NOINDEX, NOFOLLOW";
     </div>
     </form>
 
-    <div id="mas_form" class="mas_form  margin_bottom_1rem">
+    <div id="mas_form" class="mas_form  mb-1">
       <button class="buttons gal" id="add_photo">Добавить фото</button>
       <button class="buttons gal" id="del_photo">Удалить фото</button>
       <button class="buttons gal" id="change_link">Изменить ссылку на каталог</button>
@@ -95,7 +95,7 @@ $robots = "NOINDEX, NOFOLLOW";
     $(function() {
         $('.gal').on('click',function(){
             let id =  this.id;
-            $('#gallery_edit').addClass('pad');
+            $('#gallery_edit').addClass('p-1');
             $('#gallery_edit').show();
             $('#div_'+id).show();
             $('#form-buttons').show();

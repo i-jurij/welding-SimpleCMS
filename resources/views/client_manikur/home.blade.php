@@ -56,7 +56,7 @@ unset($content['pages_menu'], $pages);
                 <div class="main_section_article_imgdiv">
                 <img src="{{asset('storage/'.$pages['img'])}}" alt="{{$pages['title']}}" class="main_section_article_imgdiv_img" />
                 </div>
-                <div class="main_section_article_content margin_top_1rem">
+                <div class="main_section_article_content mt-1">
                     <h2>{{mb_ucfirst($pages['title'])}}</h2>
                     <span>
                         {{mb_ucfirst($pages['description'])}}
@@ -71,7 +71,7 @@ unset($content['pages_menu'], $pages);
                 <div class="main_section_article_imgdiv">
                 <img src="{{asset('storage/images/ddd.jpg')}}" alt="No picture" class="main_section_article_imgdiv_img" />
                 </div>
-                <div class="main_section_article_content margin_top_1rem">
+                <div class="main_section_article_content mt-1">
                     <h2>Empty</h2>
                     <span>
                         No routes (pages)

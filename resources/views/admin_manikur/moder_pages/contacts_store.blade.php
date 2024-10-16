@@ -8,7 +8,7 @@ $robots = 'NOINDEX, NOFOLLOW';
 @extends('layouts/index_admin')
 @section('content')
 
-    <div class="content margintb1 ">
+    <div class="content my-1 ">
         <div class="price">
             <p>Contact has been stored!</p>
                 <table class="table">

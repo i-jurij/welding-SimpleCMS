@@ -38,14 +38,14 @@ $filesize = 1;
                     </input>
 
 
-                    <div class="shoose_services pad mar">
+                    <div class="shoose_services m-1 p-1">
                         <p class="">Specialization Специализация:</p>
                         <ul>
                             @foreach ($res['services'] as $key => $service)
                                 @php
                                     list($page_id, $page_title) = explode('#', $key);
                                 @endphp
-                                <li class="display_inline_block text_left margin_top_1rem">
+                                <li class="display_inline_block text_left mt-1">
                                 <label class=" buttons" for="p{{$page_id}}">
                                     <input type="checkbox" id="p{{$page_id}}" class="pagess"> {{$page_title}}: all все
                                 </label>
@@ -58,13 +58,13 @@ $filesize = 1;
                                                 if ($cat_name === 'page_serv') $cat_name = 'Other services';
                                             @endphp
 
-                                            <li class="display_inline_block margin_top_1rem pad" style="position:relative; vertical-align:top;">
+                                            <li class="display_inline_block mt-1 p-1" style="position:relative; vertical-align:top;">
                                                 <label class="buttons">
                                                     <input type="checkbox" class="pp{{$page_id}}" id="c{{$cat_id}}" > {{$cat_name}}
                                                 </label>
-                                                <ul class="margin_top_1rem">
+                                                <ul class="mt-1">
                                                     @foreach ($cats as $k => $serv)
-                                                    <li class="margin_rl1 pad"><label class="buttons"><input type="checkbox" class="pp{{$page_id}} cc{{$cat_id}}" name="serv[]" value="{{$k}}"> {{$serv}}</label></li>
+                                                    <li class="margin_rl1 p-1"><label class="buttons"><input type="checkbox" class="pp{{$page_id}} cc{{$cat_id}}" name="serv[]" value="{{$k}}"> {{$serv}}</label></li>
                                                     @endforeach
                                                 </ul>
                                             </li>
@@ -92,7 +92,7 @@ $filesize = 1;
             </div>
 
             <input type="hidden" name="id" value="{{$res['master']['id']}}" required />
-            <div class="margin_top_1rem pad">
+            <div class="mt-1 pad">
                 <button class="buttons" type="submit" id="upload" form="master_edit_form">Изменить</button>
                 <button class="buttons" type="reset" onclick="reset()" form="master_edit_form">Очистить</button>
             </div>

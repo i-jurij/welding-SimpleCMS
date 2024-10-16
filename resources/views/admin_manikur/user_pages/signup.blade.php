@@ -18,10 +18,10 @@ $robots = "NOINDEX, NOFOLLOW";
                         $prev = date('Y-m-d', strtotime($date.'- 1 days')) ?? '';
                         $next = date('Y-m-d', strtotime($date.'+ 1 days')) ?? '';
                     @endphp
-                    <p class="margin_rlb1">
-                    <a href="{{url()->route('admin.master_signup.list')}}?prev={{$prev}}" class="back shad rad pad_tb05_rl1 display_inline_block">< </a>
-                    <span class="back shad rad pad_tb05_rl1 display_inline_block" style="width:17rem;">{{date('l d M Y', strtotime($date))}}</span>
-                    <a href="{{url()->route('admin.master_signup.list')}}?next={{$next}}" class="back shad rad pad_tb05_rl1 display_inline_block"> ></a>
+                    <p class="mb-1 mx-1">
+                    <a href="{{url()->route('admin.master_signup.list')}}?prev={{$prev}}" class="back shad rad px-1 py-0.5 display_inline_block">< </a>
+                    <span class="back shad rad px-1 py-0.5 display_inline_block" style="width:17rem;">{{date('l d M Y', strtotime($date))}}</span>
+                    <a href="{{url()->route('admin.master_signup.list')}}?next={{$next}}" class="back shad rad px-1 py-0.5 display_inline_block"> ></a>
                     </p>
                 @endif
                 <?php
@@ -38,12 +38,12 @@ $robots = "NOINDEX, NOFOLLOW";
                         }
                     }
                     if (!empty($art)) {
-                        $res .= '<div class="back shad rad pad margin_rlb1">';
+                        $res .= '<div class="back shad rad p-1 mb-1 mx-1">';
                         // $res .= '<p><b>'.$master.'</b></p>';
                         $res .= $art;
                         $res .= '</div>';
                     } else {
-                        // $res .= '<p class="pad">К мастеру нет записей на '.date('d.m.Y', strtotime($date)).'.</p>';
+                        // $res .= '<p class="p-1">К мастеру нет записей на '.date('d.m.Y', strtotime($date)).'.</p>';
                     }
                 }
                 echo $res;

@@ -18,7 +18,7 @@ $filesize = 1;
             <div class="">
                 <div id="error"><small></small></div>
                 <div class="master_create">
-                    <div class="pad">
+                    <div class="p-1">
                         <label class="input-file">
                             <input type="hidden" name="MAX_FILE_SIZE" value="{{$filesize*1024000}}" />
                             <input type="file" id="f0" name="image_file" accept=".jpg,.jpeg,.png, image/jpeg, image/pjpeg, image/png" />
@@ -27,7 +27,7 @@ $filesize = 1;
                         </label>
                     </div>
 
-                    <div class="pad">
+                    <div class="p-1">
                         <input type="text" placeholder="Name Имя" name="master_name" id="master_name" maxlength="30" required></input>
                         <br>
                         <input type="text" placeholder="Second name Отчество" name="sec_name" id="sec_name" maxlength="30"></input>
@@ -41,14 +41,14 @@ $filesize = 1;
                         <br>
                     </div>
 
-                    <div class="shoose_services pad">
+                    <div class="shoose_services p-1">
                         <p class="">Specialization Специализация:</p>
                         <ul>
                             @foreach ($services as $key => $service)
                                 @php
                                     list($page_id, $page_title) = explode('#', $key);
                                 @endphp
-                                <li class="pad display_inline_block text_left margin_top_1rem pad" style="position: relative; vertical-align: top;">
+                                <li class="display_inline_block text_left mt-1 p-1" style="position: relative; vertical-align: top;">
                                 <label class="buttons" for="p{{$page_id}}"><input type="checkbox" id="p{{$page_id}}" class="pagess"> {{$page_title}}: all все</label>
 
                                 <label class="buttons clarify"><input type="button" id="add{{$page_id}}" /> Clarify Уточнить</label>
@@ -59,10 +59,10 @@ $filesize = 1;
                                                 if ($cat_name === 'page_serv') $cat_name = 'Other services';
                                             @endphp
 
-                                            <li class="margin_top_1rem pad"><label class="buttons"><input type="checkbox" class="pp{{$page_id}}" id="c{{$cat_id}}" > {{$cat_name}}</label></li>
+                                            <li class="mt-1 p-1"><label class="buttons"><input type="checkbox" class="pp{{$page_id}}" id="c{{$cat_id}}" > {{$cat_name}}</label></li>
                                             <ul>
                                                 @foreach ($cats as $k => $serv)
-                                                <li class="margin_rl1 pad"><label class="buttons"><input type="checkbox" class="pp{{$page_id}} cc{{$cat_id}}" name="serv[]" value="{{$k}}"> {{$serv}}</label></li>
+                                                <li class="mx-1 p-1"><label class="buttons"><input type="checkbox" class="pp{{$page_id}} cc{{$cat_id}}" name="serv[]" value="{{$k}}"> {{$serv}}</label></li>
                                                 @endforeach
                                             </ul>
                                         @endforeach
@@ -72,7 +72,7 @@ $filesize = 1;
                         </ul>
                     </div>
 
-                    <div class="pad">
+                    <div class="p-1">
                         Hired date. Дата принятия на работу
                         <br>
                         <label>
@@ -90,7 +90,7 @@ $filesize = 1;
                 </div>
             </div>
 
-            <div class="margin_top_1rem">
+            <div class="mt-1">
                 <button class="buttons" type="submit" id="upload" form="master_create_form">Добавить</button>
                 <button class="buttons" type="reset" onclick="reset()" form="master_create_form">Очистить</button>
             </div>

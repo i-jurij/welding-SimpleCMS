@@ -26,7 +26,7 @@ if (!empty($content['contacts'])) {
 
 ?>
 <div class="he_soz_tlf flex">
-        <div class="he_soz">
+        <div class="he_soz me-4">
             <?php
                 if (!empty($data['telegram'])) {
                     echo '<a href="tg://resolve?domain='.$data['telegram'][0].'" title="Telegram" class="he_soz-tg" target="_blank" rel="noopener"></a>';
@@ -37,11 +37,11 @@ if (!empty($content['contacts'])) {
 ?>
         </div>
 
-        <div class="he_tlf">
+        <div class="he_tlf me-4">
             <?php
     if (!empty($data['tlf'])) {
         foreach ($data['tlf'] as $tlf) {
-            echo '<a href="tel:'.$tlf.'">'.$tlf.'</a><br /> ';
+            echo '<span class="me-4"><a href="tel:'.$tlf.'">'.$tlf.'</a></span> ';
         }
     }
 ?>
@@ -51,15 +51,7 @@ if (!empty($content['contacts'])) {
     <div class="he_adres">
         <?php
 if (!empty($data['adres'])) {
-    /*
-    if (!empty($data['map'])) {
-        print '<a class="he_adres_a" href="'.$data['map'].'">'.$data['adres'][0].'</a>';
-    }
-    else {
-        print '<span class="he_adres_a">'.$data['adres'][0].'</span>';
-    }
-    */
-    echo '<a class="he_adres_a" href="'.url('/').'/map/">'.$data['adres'][0].'</a>';
+    //echo '<a class="he_adres_a" href="'.url('/').'/map/">'.$data['adres'][0].'</a>';
 }
 ?>
     </div>

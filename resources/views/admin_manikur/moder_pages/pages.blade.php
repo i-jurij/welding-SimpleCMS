@@ -18,7 +18,7 @@ if ((bool) mb_strstr(url()->current(), 'service_page')) {
 
     @if (!empty($pages))
         @if (is_array($pages))
-        <div class="content margintb1 ">
+        <div class="content my-1 ">
         <div class="">
                 <table class="table">
                     <thead>

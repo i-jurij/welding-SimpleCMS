@@ -7,16 +7,16 @@ $robots = 'NOINDEX, NOFOLLOW';
 
 @extends('layouts/index_admin')
 @section('content')
-    <div class="content margintb1 ">
+    <div class="content my-1 ">
         <div>
         @if (Auth::user()['status']==='admin')
 
-            <p class="margintb1">
+            <p class="my-1">
                 Change the data only in the fields that you want to change.
             </p>
-            <form method="post" action="{{ route('admin.user.store') }}" id="users_store" class="pad form_del_ch">
+            <form method="post" action="{{ route('admin.user.store') }}" id="users_store" class="p-1 form_del_ch">
             @csrf
-                <div class="form-element margintb1 text_center">
+                <div class="form-element my-1 text_center">
                     @foreach ($content as $user)
                         <div class="shad rad display_inline_block ">
                             <div class="table_body">

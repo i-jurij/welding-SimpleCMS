@@ -8,7 +8,7 @@ $robots = 'NOINDEX, NOFOLLOW';
 @extends('layouts/index_admin')
 @section('content')
 
-<div class="content margintb1 ">
+<div class="content my-1 ">
     <div>
         @if (Auth::user()['status']==='admin')
 
@@ -31,9 +31,9 @@ $robots = 'NOINDEX, NOFOLLOW';
         }
         @endphp
 
-        <form method="post" action="{{ $res_route }}" id="users_shoose" class="pad form_del_ch">
+        <form method="post" action="{{ $res_route }}" id="users_shoose" class="p-1 form_del_ch">
             @csrf
-            <div class="form-element margintb1 {{$divclass}}">
+            <div class="form-element my-1 {{$divclass}}">
                 @foreach ($content as $user)
                 <label class="{{$labelclass}}">
                     <input type="{{$type}}" id="user_{{$user->id}}" value="{{$user->id}}" name="user_id[]" />
@@ -57,7 +57,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                 @endforeach
             </div>
             <div class="form-element" id="paginator">{!! $content->render() !!}</div>
-            <div class="form-element mar">
+            <div class="form-element m-1 p-1">
                 <button type="submit" form="users_shoose" class="buttons" id="del_ch">Submit</button>
                 <button type="reset" form="users_shoose" class="buttons">Reset</button>
             </div>

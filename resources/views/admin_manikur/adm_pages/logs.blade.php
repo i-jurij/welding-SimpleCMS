@@ -53,7 +53,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                 {{$mes}}<br>
             @endforeach
         @elseif (is_string(session('res')))
-            <p class="pad">{{session('res')}}</p>
+            <p class="p-1">{{session('res')}}</p>
         @endif
     @endif
     @if (!empty($list) && is_array($list))
@@ -65,7 +65,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                 <span>{{Crypt::decryptString($value['file'])}}<br>{{$value['size']}}</span>
             </label>
             @endforeach
-            <p class="pad">
+            <p class="p-1">
                 <button type="submit" class="buttons" name="show" value="show" >Show</button>
                 <button type="submit" class="buttons" name="clear" value="clear" >Clear</button>
             </p>
@@ -74,11 +74,11 @@ $robots = 'NOINDEX, NOFOLLOW';
 
     <?php
         if (!empty($show) && is_array($show)) {
-            echo '<p class="text_center pad">Файл: <b>"'.$show['log_name'].'"</b></p>';
+            echo '<p class="text_center p-1">Файл: <b>"'.$show['log_name'].'"</b></p>';
             ?>
     <div>
         <div id="list" class="logs"></div>
-        <nav class="pagination-container margin_top_1rem">
+        <nav class="pagination-container mt-1">
             <span id="pagination-numbers"></span>
         </nav>
     </div>

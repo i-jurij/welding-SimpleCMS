@@ -19,8 +19,8 @@ $robots = "NOINDEX, NOFOLLOW";
         <p>{{$data['res']}}</p>
     @endif
 @elseif (!empty($data['serv']))
-    <div class="form_radio_btn margin_bottom_1rem" style="width:85%;">
-        <p class="pad margin_bottom_1rem">В строке нужной услуги кликните по ячейке в колонке с ценой, введите данные, нажмите кнопку Сохранить.</p>
+    <div class="form_radio_btn mb-1" style="width:85%;">
+        <p class="p-1 mb-1">В строке нужной услуги кликните по ячейке в колонке с ценой, введите данные, нажмите кнопку Сохранить.</p>
         <div class="price">
             <form action="{{url()->route('admin.price.update')}}" method="post" name="price_form" id="price_form" >
             @csrf
@@ -83,7 +83,7 @@ $robots = "NOINDEX, NOFOLLOW";
 
                     </tbody>
                 </table>
-                <div class="margintb1" id="form_buttons" >
+                <div class="my-1" id="form_buttons" >
                     <button type="submit" name="submit" class="buttons" form="price_form" />Сохранить</button>
                     <input type="reset" class="buttons" form="price_form" value="Сбросить" />
                 </div>
@@ -94,8 +94,8 @@ $robots = "NOINDEX, NOFOLLOW";
     @if (!empty($data['service_page']))
         <form action="{{url()->route('admin.price.post_edit')}}" method="post" id="form_price_edit" >
         @csrf
-                <div class="form_radio_btn margin_bottom_1rem" style="width:85%;">
-                    <p class="pad margin_bottom_1rem">Выберите страницу для редактирования расценок:</p>
+                <div class="form_radio_btn mb-1" style="width:85%;">
+                    <p class="p-1 mb-1">Выберите страницу для редактирования расценок:</p>
                     @foreach ($data['service_page'] as $value)
                         <label>
                             <input type="radio" name="id" value="{{$value['id']}}" required />
@@ -103,7 +103,7 @@ $robots = "NOINDEX, NOFOLLOW";
                         </label>
                     @endforeach
                 </div>
-                <div class="margintb1" id="form_price_edit_buttons" >
+                <div class="my-1" id="form_price_edit_buttons" >
                     <button type="submit" name="submit" class="buttons" form="form_price_edit" />Далее</button>
                     <input type="reset" class="buttons" form="form_price_edit" value="Сбросить" />
                 </div>

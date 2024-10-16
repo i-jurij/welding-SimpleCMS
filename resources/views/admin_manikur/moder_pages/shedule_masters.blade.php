@@ -16,16 +16,16 @@ $robots = "NOINDEX, NOFOLLOW";
                 {{$mes}}<br>
             @endforeach
         @elseif (is_string(session('data')))
-            <p class="pad">{{session('data')}}</p>
+            <p class="p-1">{{session('data')}}</p>
         @elseif (session('data') === false)
-            <p class="error pad">
+            <p class="error p-1">
                 Warning!<br>
                 Data of schedule have been NOT stored!
             </p>
         @endif
     @endif
     <p class="" id="p_pro">Показать / скрыть справку</p>
-    <div class="display_none text_left margintb1" style="max-width:60rem;" id="pro">
+    <div class="display_none text_left my-1" style="max-width:60rem;" id="pro">
         <p>Запланированные выходные дни или часы в графике отмечены цветом.</p>
         <p>Чтобы добавить <b>выходной день</b>:</p>
         <ul>
@@ -41,7 +41,7 @@ $robots = "NOINDEX, NOFOLLOW";
         <p>Нажмите кнопку Готово, чтобы сохранить изменения.</p>
     </div>
     </div>
-    <form action="{{url()->route('admin.masters.shedule.store')}}" method="post" id="zapis_usluga_form" class="content pad form_radio_btn">
+    <form action="{{url()->route('admin.masters.shedule.store')}}" method="post" id="zapis_usluga_form" class="content p-1 form_radio_btn">
     @csrf
         <div id="master_choice">
             @foreach ($data['masters'] as $master)
@@ -54,7 +54,7 @@ $robots = "NOINDEX, NOFOLLOW";
                     />
                     <span>
                         <img
-                            class="display_inline_block margint0b0rlauto"
+                            class="display_inline_block my-0 mx-auto"
                             src="{{asset('storage'.DIRECTORY_SEPARATOR.$master['master_photo'])}}"
                             alt="Photo of {{$master['master_name']}} {{$master['sec_name']}} {{$master['master_fam']}}"
                             style="max-width:120px;"

@@ -25,8 +25,8 @@ $robots = 'NOINDEX, NOFOLLOW';
         @if (isset($data['serv']) && is_array($data['serv']))
             <form action="<?php echo url()->route('admin.service_page.post_content'); ?>" method="post" enctype="multipart/form-data" class="" id="service_content_form">
             @csrf
-                <div class="form_radio_btn margin_bottom_1rem" style="width:85%;">
-                    <div id="page_choice"><p class="pad">Выберите страницу, услугу и действие для содержимого:</p>
+                <div class="form_radio_btn mb-1" style="width:85%;">
+                    <div id="page_choice"><p class="p-1">Выберите страницу, услугу и действие для содержимого:</p>
                     @foreach ($data['serv'] as $page => $cat_arr)
                         <label>
                             <input type="radio" name="page" class="buttons vertaligntop" id="{{sanitize(translit_to_lat($page))}}" value="{{$page}}">
@@ -73,7 +73,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                     <button type="button" class="buttons" id="content_add" />Add</button>
                     <button type="submit" name="content_remove" value="content_remove" class="buttons" id="content_remove" form="service_content_form"/>Remove</button>
                 </div>
-                <div class="display_none pad back shad price" id="content">
+                <div class="display_none p-1 back shad price" id="content">
                     <label ><p>Выберите файл в формате "ODT" весом до 3Мб</p>
                         <p>
                         <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />

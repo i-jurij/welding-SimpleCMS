@@ -43,7 +43,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 <div class="main_section_article_imgdiv">
                     <img src="{{asset('storage'.$img_cat)}}" alt="Фото {{$cat['name']}}" class="main_section_article_imgdiv_img" />
                 </div>
-                <div class="main_section_article_content margin_top_1rem">
+                <div class="main_section_article_content mt-1">
                     <h3>{{$cat['name']}}</h3>
                     <span>{{$cat['description']}}</span>
                 </div>
@@ -59,7 +59,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                             <div class="main_section_article_imgdiv">
                                 <img src="{{asset('storage'.$img_serv)}}" alt="Фото {{$serv['name']}}" class="main_section_article_imgdiv_img" />
                             </div>
-                            <div class="main_section_article_content  margin_top_1rem">
+                            <div class="main_section_article_content  mt-1">
                                 <h3>{{$serv['name']}}</h3>
                                 <span>{{$serv['description']}}</span><br />
                                 <span>от {{$serv['price']}} руб.</span>
@@ -76,7 +76,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 $serv = $this_show_method_data['serv'];
                 $img_serv = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$serv['image'];
             @endphp
-            <article class="back shad rad pad margin_rlb1">
+            <article class="back shad rad p-1 mb-1 mx-1">
                 <div class="persinfo ">
                     <img
                         src="{{asset('storage'.$img_serv)}}"
@@ -84,7 +84,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                         style="width:60%;display:block;margin:auto;"
                     />
                 </div>
-                <div class="  margin_top_1rem">
+                <div class="  mt-1">
                     <h3>{{$serv['name']}}</h3>
                     <span>{{$serv['description']}}</span><br />
                      <span>от {{$serv['price']}} руб.</span>
@@ -92,7 +92,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
             </article>
             <br>
             @if (!empty($this_show_method_data['content']))
-                <article class="back shad rad pad margin_rlb1">
+                <article class="back shad rad p-1 mb-1 mx-1">
                     <div class="persinfo ">
                         {!!$this_show_method_data['content']!!}
                     </div>
@@ -102,7 +102,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 
     @else
         <article class="main_section_article">
-            <div class="main_section_article_imgdiv pad" style="background-color: var(--bgcolor-content);">
+            <div class="main_section_article_imgdiv p-1" style="background-color: var(--bgcolor-content);">
                 <h2>Расценки</h2>
             </div>
             <div class="main_section_article_content"><br />
@@ -127,7 +127,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     <div class="main_section_article_imgdiv">
                         <img src="{{asset('storage'.$img_cat)}}" alt="Фото {{$cat['name']}}" class="main_section_article_imgdiv_img" />
                     </div>
-                    <div class="main_section_article_content margin_top_1rem">
+                    <div class="main_section_article_content mt-1">
                         <h3>{{$cat['name']}}</h3>
                             @if (!empty($data['serv']))
                                 @foreach ($data['serv'] as $k => $serv)
@@ -153,7 +153,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                         <div class="main_section_article_imgdiv">
                             <img src="{{asset('storage'.$img_serv)}}" alt="Фото {{$serv['name']}}" class="main_section_article_imgdiv_img" />
                         </div>
-                        <div class="main_section_article_content  margin_top_1rem">
+                        <div class="main_section_article_content  mt-1">
                             <h3>{{$data['serv'][$ke]['name']}}</h3>
                             <!-- <span>{{$data['serv'][$ke]['description']}}</span><br /> -->
                             <span>от {{$data['serv'][$ke]['price']}} руб.</span>

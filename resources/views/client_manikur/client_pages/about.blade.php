@@ -24,7 +24,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 $img = imageFor($about['image']);
             @endphp
             <article class="main_section_article ">
-                <div class="main_section_article_imgdiv margin_bottom_1rem">
+                <div class="main_section_article_imgdiv mb-1">
                     <img src="{{asset('storage'.DIRECTORY_SEPARATOR.$img)}}" alt="{{$about['title']}}" class="main_section_article_imgdiv_img" />
                 </div>
                 <div class="main_section_article_content">
@@ -46,7 +46,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 @php $img = 'images'.DIRECTORY_SEPARATOR.'masters'.DIRECTORY_SEPARATOR.mb_strtolower(sanitize(translit_to_lat($master['master_phone_number']))).'.jpg' @endphp
             @endif
             <article class="main_section_article ">
-                <div class="main_section_article_imgdiv margin_bottom_1rem" style="background-color: var(--bgcolor-content);">
+                <div class="main_section_article_imgdiv mb-1" style="background-color: var(--bgcolor-content);">
                     <img src="{{asset('storage'.DIRECTORY_SEPARATOR.$img)}}" alt="{{$master['master_fam']}}" class="main_section_article_imgdiv_img" />
                 </div>
 

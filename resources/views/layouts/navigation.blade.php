@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="back shad margin_bottom_1rem">
+<nav x-data="{ open: false }" class="back shad mb-1">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">

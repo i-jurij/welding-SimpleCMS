@@ -21,7 +21,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 @if (!empty($menu)) <p class="content">{{$menu}}</p> @endif
 
 @if (!empty($data))
-    <div class="zapis_usluga margin_rlb1">
+    <div class="zapis_usluga mb-1 mx-1">
 <?php
 if (!empty($data['serv'])) {
     foreach ($data['serv'] as $page => $cat_arr) {
@@ -30,7 +30,7 @@ if (!empty($data['serv'])) {
         $page_name = $arr[1];
         $i = 1;
         ?>
-        <div class="back shad pad margin_rlb1 price ankor" id="<?php echo $page_alias; ?>">
+        <div class="back shad p-1 mb-1 mx-1 price ankor" id="<?php echo $page_alias; ?>">
             <table class="table">
                 <caption class=""><?php echo '<a href="'.url('/').'/'.$page_alias.'/" ><h2>'.$page_name.'</h2></a>'; ?></caption>
                 <colgroup>
@@ -86,7 +86,7 @@ if (!empty($data['serv'])) {
     <?php
     }
 } else {
-    echo '<div class="back shad pad margin_rlb1 price"">Нет прайса для отображения.</div>';
+    echo '<div class="back shad p-1 mb-1 mx-1 price"">Нет прайса для отображения.</div>';
 }
 ?>
 </div>

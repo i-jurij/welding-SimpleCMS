@@ -27,7 +27,7 @@ $robots = 'NOINDEX, NOFOLLOW';
 
     @else
 
-    <div class="content margintb1 ">
+    <div class="content my-1 ">
         <div class="price">
             @if (Auth::user()['status']==='admin' || Auth::user()['status']==='moder')
                 @if (is_string($content))
@@ -35,10 +35,10 @@ $robots = 'NOINDEX, NOFOLLOW';
                 @else
 
                     @if ( $remove_or_edit )
-                        <form method="post" action="{{ $res_route }}" id="contacts_form" class="pad">
+                        <form method="post" action="{{ $res_route }}" id="contacts_form" class="p-1">
                             @csrf
 
-                            <div class="form-element margintb1">
+                            <div class="form-element my-1">
                                 <table class="table" id="ctable">
                                     <thead>
                                     <tr>
@@ -55,7 +55,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                                         <td>{{$key+1}}</td>
                                         <td>{{$contact->type}}</td>
                                         <td>{{$contact->data}}</td>
-                                        <td class="text_center" style="padding: 0;">
+                                        <td class="text_center p-0">
                                             <input type="{{$type}}" name="contacts[]" value="{{$contact->id.'plusplus'.$contact->type.'plusplus'.$contact->data}}">
                                         </td>
                                     </tr>
@@ -65,7 +65,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                                 </table>
                             </div>
 
-                            <div class="form-element mar">
+                            <div class="form-element m-1">
                                 <button type="submit" form="contacts_form" class="buttons" id="contacts_submit">{{$buttonname}}</button>
                                 <button type="reset" form="contacts_form" class="buttons" id="contacts_reset">Reset</button>
                             </div>

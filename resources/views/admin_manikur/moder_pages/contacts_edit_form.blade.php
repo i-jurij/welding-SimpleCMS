@@ -10,7 +10,7 @@ $robots = 'NOINDEX, NOFOLLOW';
     <div class="content ">
 
         <div class="price">
-        <form method="post" action="{{ url()->route('admin.contacts.update') }}" id="contacts_edit_form" class="margin_top_1rem">
+        <form method="post" action="{{ url()->route('admin.contacts.update') }}" id="contacts_edit_form" class="mt-1">
             @csrf
             <table class="table">
                 <tr>
@@ -27,7 +27,7 @@ $robots = 'NOINDEX, NOFOLLOW';
                 @endforeach
             </table>
             <input type="hidden" name="id" value="{{$data['id']}}" required />
-            <div class="form-element mar">
+            <div class="form-element m-1">
                 <button type="submit" form="contacts_edit_form" class="buttons" id="contacts_submit">Submit</button>
                 <button type="reset" form="contacts_edit_form" class="buttons" id="contacts_reset">Reset</button>
             </div>

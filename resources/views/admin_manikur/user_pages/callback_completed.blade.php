@@ -24,7 +24,7 @@ $robots = 'NOINDEX, NOFOLLOW';
             </form>
         @endif
 
-        <div class="div_center pad" style="width:100%;max-width:1240px;">
+        <div class="div_center p-1" style="width:100%;max-width:1240px;">
 
                 <table class="table">
                     <colgroup>

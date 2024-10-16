@@ -26,10 +26,10 @@ $uv = '';
                 $dat = $dt->isoFormat('LL');
                 $fulldate = $dat.', '.$weekday;
                 ?>
-                <p class="margin_rlb1">
-                <a href="<?php echo url()->route('admin.signup.by_date'); ?>?prev=<?php echo $prev; ?>" class="back shad rad pad_tb05_rl1 display_inline_block">< </a>
-                <span class="back shad rad pad_tb05_rl1 display_inline_block" style="width:15rem;"><?php echo $fulldate; ?></span>
-                <a href="<?php echo url()->route('admin.signup.by_date'); ?>?next=<?php echo $next; ?>" class="back shad rad pad_tb05_rl1 display_inline_block"> ></a>
+                <p class="mb-1 mx-1">
+                <a href="<?php echo url()->route('admin.signup.by_date'); ?>?prev=<?php echo $prev; ?>" class="back shad rad py-0.5 px-1 display_inline_block">< </a>
+                <span class="back shad rad py-0.5 px-1 display_inline_block" style="width:15rem;"><?php echo $fulldate; ?></span>
+                <a href="<?php echo url()->route('admin.signup.by_date'); ?>?next=<?php echo $next; ?>" class="back shad rad py-0.5 px-1 display_inline_block"> ></a>
                 </p>
 
                 <?php
@@ -49,7 +49,7 @@ $uv = '';
                         }
                     }
                     if (!empty($art)) {
-                        $res .= '<div class="back shad rad pad margin_rlb1">';
+                        $res .= '<div class="back shad rad p-1 mb-1 mx-1">';
                         $res .= '<p><b>'.$master.'</b></p>';
                         $res .= $art;
                         $res .= '</div>';
@@ -59,7 +59,7 @@ $uv = '';
                 ?>
             @elseif (!empty($data['by_master']))
                 <div id="app">
-                    <p class="pad">Выберите мастера:</p>
+                    <p class="p-1">Выберите мастера:</p>
                 @foreach ($data['by_master'] as $master)
                     @php
                         $master_name = $master['master_name'].' '
@@ -509,13 +509,13 @@ $uv = '';
                         for (const key in master_data.post_by_master) {
                             if (Object.hasOwnProperty.call(master_data.post_by_master, key)) {
                                 master = key;
-                                string += '<div class="back shad rad pad margin_rlb1" >'+'<span><b>'+master+'</b></span></div>';
+                                string += '<div class="back shad rad p-1 mb-1 mx-1" >'+'<span><b>'+master+'</b></span></div>';
 
                                 for (const datas in master_data.post_by_master[key]) {
                                     if (Object.hasOwnProperty.call(master_data.post_by_master[key], datas)) {
 
-                                        string += '<div class="back shad rad pad margin_rlb1">\
-                                                    <p class="pad">'+js_date(datas)+'</p>';
+                                        string += '<div class="back shad rad p-1 mb-1 mx-1">\
+                                                    <p class="p-1">'+js_date(datas)+'</p>';
                                         let serv_and_client = master_data.post_by_master[key][datas];
 
                                         for (var i = 0; i < serv_and_client.length; i++){
@@ -527,7 +527,7 @@ $uv = '';
                                             let service = serv_and_client[i].service;
                                             let client = serv_and_client[i].client;
 
-                                            string += '<div class="back shad rad pad mar display_inline_block"'
+                                            string += '<div class="back shad rad p-1 mar display_inline_block"'
                                                         +'<span class="display_inline_block zapis_usluga"><b>'+capitalizeFirstLetter(fulldate)+'</b></span><br>'
                                                         +service+'<br>'
                                                         +client+'<br>\

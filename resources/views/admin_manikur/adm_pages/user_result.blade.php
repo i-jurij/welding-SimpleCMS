@@ -7,7 +7,7 @@ $robots = 'NOINDEX, NOFOLLOW';
 
 @extends('layouts/index_admin')
 @section('content')
-    <div class="content margintb1 ">
+    <div class="content my-1 ">
             <p>{!! $res !!}</p>
     </div>
 

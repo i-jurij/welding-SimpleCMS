@@ -19,7 +19,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 @section('content')
     @if (!empty($menu)) <p class="content">{{$menu}}</p> @endif
 
-    <div class="back shad rad pad margin_rlb1">
+    <div class="back shad rad p-1 mx-1 mb-1">
     @if (!empty($content['page_content']))
         {!! $content['page_content'] !!}
     @else

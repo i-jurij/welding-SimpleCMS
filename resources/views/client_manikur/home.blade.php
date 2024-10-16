@@ -53,12 +53,12 @@ unset($content['pages_menu'], $pages);
     @foreach ($sort_pages as $pages)
         <article class="main_section_article back">
             <a class="main_section_article_content_a" href="{{url('/'.$pages['alias'])}}" >
-                <div class="main_section_article_imgdiv">
-                <img src="{{asset('storage/'.$pages['img'])}}" alt="{{$pages['title']}}" class="main_section_article_imgdiv_img" />
+                <div class="main_section_article_imgdiv mb-4">
+                    <img src="{{asset('storage/'.$pages['img'])}}" alt="{{$pages['title']}}" class="main_section_article_imgdiv_img" />
                 </div>
-                <div class="main_section_article_content mt-1">
-                    <h2>{{mb_ucfirst($pages['title'])}}</h2>
-                    <span>
+                <div class="main_section_article_content">
+                    <h2 class="">{{mb_ucfirst($pages['title'])}}</h2>
+                    <span class="">
                         {{mb_ucfirst($pages['description'])}}
                     </span>
                 </div>

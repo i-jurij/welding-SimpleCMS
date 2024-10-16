@@ -526,6 +526,7 @@ textarea:valid {
 
 .main_section_article {
     width: 100%;
+    min-width: 12rem;
     max-width: calc((100%/4) - 4.3rem);
     display: inline-block;
     margin: 2rem 1rem 1rem 1rem;
@@ -541,20 +542,12 @@ textarea:valid {
     border-radius: var(--radius);
 }
 
-.main_section_article .main_section_article_imgdiv img {
+.main_section_article .main_section_article_imgdiv_img {
     width: 100%;
     height: auto;
     border-radius: var(--radius);
     pointer-events: none;
     vertical-align: middle;
-}
-
-.main_section_article_content {
-    padding: 0 0 0 0;
-}
-
-.main_section_article_content span {
-    padding: 0 0 0 0;
 }
 
 .main_section_article_content h2 {

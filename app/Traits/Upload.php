@@ -39,7 +39,7 @@ trait Upload
         $folder = !is_null($this->folder) ? $this->folder : null;
         $disk = !is_null($this->disk) ? $this->disk : 'public';
         // Determine the file's extension based on the file's MIME type...
-        $extension = !is_null($this->extension) ? $this->extension : $file->extension();
+        $extension = !empty($this->extension) ? $this->extension : $file->extension();
 
         return $file->storeAs(
             $folder,

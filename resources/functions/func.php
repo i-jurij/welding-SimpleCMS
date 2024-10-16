@@ -6,12 +6,12 @@ function panel(array $variable)
     $res = '';
     foreach ($variable as $key => $value) {
         if (is_array($value) && !empty($value)) {
-            $class = 'back shad rad pad mar display_inline_block';
-            $p = '<p class="pad"><b>'.my_mb_ucfirst(str_replace('_', ' ', $key)).'</b></p>';
+            $class = 'back shad p-4 me-4 mb-4 display_inline_block';
+            $p = '<p class="p-2"><b>'.my_mb_ucfirst(str_replace('_', ' ', $key)).'</b></p>';
             if ($key == 'admin') {
                 $key = '';
                 $p = '';
-                $class = 'back shad rad pad margin_rlb1 justify';
+                $class = 'back shad rad p-2 me-2 justify';
             }
             $res .= '<div class="'.$class.'">'.$p;
             $res .= panel($value);

@@ -221,7 +221,7 @@ textarea:valid {
 }
 
 .back {
-    background: center / contain repeat url("../../storage/app/public/images/back.jpg");
+    background-image: url("../../storage/app/public/images/back.jpg");
     background-repeat: repeat;
 }
 
@@ -487,7 +487,7 @@ textarea:valid {
 }
 
 .content {
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
     padding: 1rem 1rem 1rem 1rem;
     width: 100%;
     max-width: 1640px;
@@ -694,12 +694,6 @@ a.gallery_a:hover img {
     width: 5rem;
 }
 
-.pers {
-    background-color: var(--bgcolor-content);
-    border-radius: var(--radius);
-    padding: 1rem 0.5rem 1rem 0.5rem;
-}
-
 .formmessage {
     width: auto;
     max-width: 50rem;
@@ -862,11 +856,6 @@ a.gallery_a:hover img {
     display: inline-block;
     flex-grow: 1;
     max-width: 100%;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: var(--radius);
-    background: var(--bgcolor-content) none repeat scroll 0% 0%;
-    box-shadow: var(--boxshadow);
 }
 
 .case_datetime {

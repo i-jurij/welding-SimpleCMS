@@ -18,13 +18,13 @@ $robots = 'NOINDEX, NOFOLLOW';
     @if (!empty($callbacks))
     <div class="content">
         @if ( (Auth::user()->status === 'Admin' || Auth::user()->status === 'admin') || (Auth::user()->status === 'Moder' || Auth::user()->status === 'moder') )
-            <form method="post" action="{{ url()->route('admin.callbacks.remove') }}" class="zapis_usluga">
+            <form method="post" action="{{ url()->route('admin.callbacks.remove') }}" class="">
             @csrf
                 <button type="submit" class="buttons" name="submit" value="clear">Очистить журнал</button>
             </form>
         @endif
 
-        <div class="div_center p-1" style="width:100%;max-width:1240px;">
+        <div class="div_center mt-4" style="width:100%;max-width:1240px;">
 
                 <table class="table">
                     <colgroup>

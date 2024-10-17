@@ -6,7 +6,7 @@ function panel(array $variable)
     $res = '';
     foreach ($variable as $key => $value) {
         if (is_array($value) && !empty($value)) {
-            $class = 'back shad p-4 me-4 mb-4 display_inline_block';
+            $class = 'back shad p-4 me-4 mt-4 display_inline_block';
             $p = '<p class="p-2"><b>'.my_mb_ucfirst(str_replace('_', ' ', $key)).'</b></p>';
             if ($key == 'admin') {
                 $key = '';

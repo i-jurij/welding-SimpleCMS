@@ -30,7 +30,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
         </p>
     @elseif (!empty($res) && is_string($res)) <p class="content">{{$res}}</p>
     @else
-        <p class="back shad p-1 mb-1 mx-1 zapis_usluga">
+        <p class="back shad p-4 my-4 mx-auto zapis_usluga">
             Не обещаем перезвонить вам сразу же. У нас нет колл-центра.<br />
             Перезвоним как только сможем.
         </p>
@@ -74,8 +74,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     <div class="clear"></div>
                 </div>
 
-                <div class="mt-1">
-                    <p class="pers">
+                <div class="mt-4 ">
+                    <p class="p-4">
                     Отправляя данную форму, вы даете согласие на
                     <br>
                     <a href="{{url('/persinfo')}}">

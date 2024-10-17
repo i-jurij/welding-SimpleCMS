@@ -26,7 +26,7 @@ $fmt = new IntlDateFormatter(
 
     <div class="content">
 
-        <div class="mb-1">
+        <div class="mb-4">
             Выберите номера по которым уже перезвонили, поставив галочку. <br />
             Нажмите кнопку "Удалить", чтобы убрать их из списка,<br />
             или "Сбросить", чтобы снять выбранное.
@@ -40,9 +40,9 @@ $fmt = new IntlDateFormatter(
             </div>
             <div class="flex adm_recall_article_container">
                 @foreach ($callbacks as $cb)
-                    <article class="adm_recall_article ">
+                    <article class="adm_recall_article shad p-4 m-4">
                         <div class="">{{$fmt->format($cb->created_at)}}</div>
-                            <div class="mb-1">
+                            <div class="mb-4">
                                 <table class="text_left">
                                     <tr>
                                         <td>Имя:</td>

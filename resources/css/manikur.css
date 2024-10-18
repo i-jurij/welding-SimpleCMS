@@ -1568,8 +1568,9 @@ a.gallery_a:hover img {
     vertical-align: middle;
     text-align: center;
     box-shadow: var(--boxshadow);
-    border-radius: var(--radius);
-    background-color: var(--bgcolor-content);
+    background-image: url("../../storage/app/public/images/button_back.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
     /* height: 3rem; */
     width: 100%;
     padding: 0.5rem 1rem;
@@ -1590,13 +1591,15 @@ a.gallery_a:hover img {
 
 /* Focus */
 .input-file input[type=file]:focus+span {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+    background-image: url("../../storage/app/public/images/button_back_active.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Hover/active */
 .input-file:hover span,
 .input-file:active span {
-    background-color: var(--bgcolor-button-active);
+    box-shadow: none;
 }
 
 /* Disabled */

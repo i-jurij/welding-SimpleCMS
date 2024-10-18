@@ -34,7 +34,7 @@ if ((bool) mb_strstr(url()->current(), 'service_page')) {
     </p>
 </div>
 
-<div class=" ">
+<div class="mt-4">
 @if (!empty($img_res)) <p class="content">MESSAGE: {!! $img_res !!}</p> @endif
     <div class="mb-1" style="max-width:55rem;">
                 <form action="{{url()->route('admin.pages.store')}}" method="post" enctype="multipart/form-data" name="create_page" id="create_page" class="form_page_add">

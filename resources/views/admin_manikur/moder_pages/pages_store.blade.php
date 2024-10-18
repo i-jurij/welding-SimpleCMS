@@ -16,7 +16,7 @@ $robots = 'NOINDEX, NOFOLLOW';
             @endif
 
             @if (!empty($img_res)) {!!$img_res!!} @endif
-            <p class="mb-1 ">Pages data has been stored!</p>
+            <p class="my-4 ">Pages data has been stored!</p>
                 <table class="table">
                     <thead>
                     <tr>

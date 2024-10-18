@@ -1,5 +1,5 @@
 <?php
-$title = 'HOME';
+$title = 'Сварочные работы, изделия и конструкции из металла';
 $page_meta_description = 'GET FROM DB';
 $page_meta_keywords = 'GET FROM DB';
 $robots = 'INDEX, FOLLOW';

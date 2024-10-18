@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Laravel\Facades\Image;
 
 class GalleryController extends Controller
 {
@@ -59,8 +59,17 @@ class GalleryController extends Controller
                         $this->filename = pathinfo(mb_strtolower(sanitize(translit_to_lat($image->getClientOriginalName()))), PATHINFO_FILENAME);
                         $this->extension = $image->extension();
 
-                        $img = Image::make($image);
-                        $img->insert(Storage::get('public'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'watermark.png'), 'bottom-right');
+                        /*
+                        if ($this->extension == 'webp') {
+                            $image_new = \imagecreatefromwebp($image);
+                            $img = Image::read($image_new);
+                        } else {
+                            $img = Image::read($image);
+                        }
+                        */
+                        $img = Image::read($image);
+
+                        $img->place(Storage::get('public'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'watermark.png'), 'bottom-right');
                         if (Storage::put('public'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.'gallery'.DIRECTORY_SEPARATOR.$this->filename.'.'.$this->extension, $img->encode())) {
                             $res .= 'Image '.$image->getClientOriginalName().' was uploaded.<br>';
                         } else {

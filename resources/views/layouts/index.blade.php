@@ -24,11 +24,11 @@
         <div class="main ">
             <section class="main_section mx-auto">
                 <div class="flex flex_top">
-                     @if (url()->current() !== url()->route('client.home'))
+
                         <div class="content title">
                             <h1>{{ $title }}</h1>
                         </div>
-                    @endif
+
                     @if ($errors->any())
                         <div class="zapis_usluga back shad p-4 my-4 alert alert-danger error">
                             <ul>

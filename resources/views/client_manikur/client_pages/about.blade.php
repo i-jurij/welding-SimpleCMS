@@ -23,8 +23,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
             @php
                 $img = imageFor($about['image']);
             @endphp
-            <article class="main_section_article ">
-                <div class="main_section_article_imgdiv mb-1">
+            <article class="main_section_article back my-4 mx-2">
+                <div class="main_section_article_imgdiv mb-4">
                     <img src="{{asset('storage'.DIRECTORY_SEPARATOR.$img)}}" alt="{{$about['title']}}" class="main_section_article_imgdiv_img" />
                 </div>
                 <div class="main_section_article_content">

@@ -22,7 +22,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 <link rel="stylesheet" type="text/css" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'js'.DIRECTORY_SEPARATOR.'gallery'.DIRECTORY_SEPARATOR.'fancybox.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'js'.DIRECTORY_SEPARATOR.'gallery'.DIRECTORY_SEPARATOR.'panzoom.css') }}" >
     @if (!empty($menu)) <p class="content">{{$menu}}</p> @endif
-        <div class="">
+        <div class="mt-4">
 
         <div class="gallery">
         @php
@@ -45,7 +45,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     $namefn = pathinfo($name, PATHINFO_FILENAME);
                     $w = (!empty($width)) ? 'width="'.$width.'"' : '';
                     $h = (!empty($height)) ? 'height="'.$height.'"' : '';
-                    $gallery .= '<a data-fancybox="gallery" class="gallery_a" href="'.Storage::url($nameww).'" title="'.$namefn.'">
+                    $gallery .= '<a data-fancybox="gallery" class="gallery_a" href="'.asset('storage'.DIRECTORY_SEPARATOR.$nameww).'" title="'.$namefn.'">
                                     <img class="rounded" src="'.asset('storage'.DIRECTORY_SEPARATOR.$nameww).'" alt="'.$namefn.'" '.$w.' '.$h.'  />
                                 </a>';
                 }

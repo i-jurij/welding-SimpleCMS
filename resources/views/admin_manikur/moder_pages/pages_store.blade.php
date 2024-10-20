@@ -9,7 +9,7 @@ $robots = 'NOINDEX, NOFOLLOW';
 @extends('layouts/index_admin')
 @section('content')
 
-    <div class="content my-1 ">
+    <div class="content my-4 ">
         <div class="price">
             @if (!empty($create_cat_serv))
                 @include($create_cat_serv)

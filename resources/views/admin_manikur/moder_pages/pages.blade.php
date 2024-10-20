@@ -14,7 +14,7 @@ if ((bool) mb_strstr(url()->current(), 'service_page')) {
 
 @extends('layouts/index_admin')
 @section('content')
-    @if (!empty($res)) <p class="content">MESSAGE:<br> {!! $res !!}</p> @endif
+    @if (!empty($res)) <p class="content my-4 mx-auto">MESSAGE:<br> {!! $res !!}</p> @endif
 
     @if (!empty($pages))
         @if (is_array($pages))

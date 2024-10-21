@@ -39,7 +39,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 $cat = $this_show_method_data['cat'];
                 $img_cat = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$cat['image'];
             @endphp
-            <article class="main_section_article ">
+            <article class="main_section_article back mt-4">
                 <div class="main_section_article_imgdiv">
                     <img src="{{asset('storage'.$img_cat)}}" alt="Фото {{$cat['name']}}" class="main_section_article_imgdiv_img" />
                 </div>
@@ -55,14 +55,14 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                         $img_serv = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$serv['image'];
                     @endphp
                     @if (empty($data['serv'][$ke]['category_id']) || $data['serv'][$ke]['category_id'] === '')
-                        <article class="main_section_article ">
+                        <article class="main_section_article back mt-4">
                             <div class="main_section_article_imgdiv">
                                 <img src="{{asset('storage'.$img_serv)}}" alt="Фото {{$serv['name']}}" class="main_section_article_imgdiv_img" />
                             </div>
-                            <div class="main_section_article_content  mt-1">
+                            <div class="main_section_article_content  mt-4">
                                 <h3>{{$serv['name']}}</h3>
                                 <span>{{$serv['description']}}</span><br />
-                                <span>от {{$serv['price']}} руб.</span>
+                                <span>От {{$serv['price']}} руб.</span>
                             </div>
                         </article>
                     @endif
@@ -76,24 +76,25 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 $serv = $this_show_method_data['serv'];
                 $img_serv = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$serv['image'];
             @endphp
-            <article class="back shad rad p-1 mb-1 mx-1">
-                <div class="persinfo ">
+            <article class="back shad p-4 my-4 mx-4">
+                <div class="">
                     <img
                         src="{{asset('storage'.$img_serv)}}"
                         alt="Фото {{$serv['name']}}"
-                        style="width:60%;display:block;margin:auto;"
+                        style="display:block;"
+                        class="w-3/5 max-w-xs mx-auto md:me-4 float:none md:float-left"
                     />
                 </div>
-                <div class="  mt-1">
+                <div class="mt-4">
                     <h3>{{$serv['name']}}</h3>
                     <span>{{$serv['description']}}</span><br />
-                     <span>от {{$serv['price']}} руб.</span>
+                     <span>От {{$serv['price']}} руб.</span>
                 </div>
             </article>
             <br>
             @if (!empty($this_show_method_data['content']))
-                <article class="back shad rad p-1 mb-1 mx-1">
-                    <div class="persinfo ">
+                <article class="back shad p-4 my-4 mx-4">
+                    <div class=" ">
                         {!!$this_show_method_data['content']!!}
                     </div>
                 </article>
@@ -101,8 +102,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
         @endif
 
     @else
-        <article class="main_section_article">
-            <div class="main_section_article_imgdiv p-1" style="background-color: var(--bgcolor-content);">
+        <article class="main_section_article back mt-4">
+            <div class="main_section_article_imgdiv p-4">
                 <h2>Расценки</h2>
             </div>
             <div class="main_section_article_content"><br />
@@ -122,12 +123,12 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
             @php
                 $img_cat = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$cat['image'];
             @endphp
-                <article class="main_section_article ">
+                <article class="main_section_article back mt-4">
                 <a href="<?php echo url('/'.$page_data[0]['alias'].'/category/'.$cat['id']); ?>">
                     <div class="main_section_article_imgdiv">
                         <img src="{{asset('storage'.$img_cat)}}" alt="Фото {{$cat['name']}}" class="main_section_article_imgdiv_img" />
                     </div>
-                    <div class="main_section_article_content mt-1">
+                    <div class="main_section_article_content mt-4">
                         <h3>{{$cat['name']}}</h3>
                             @if (!empty($data['serv']))
                                 @foreach ($data['serv'] as $k => $serv)
@@ -148,15 +149,15 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     $img_serv = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$serv['image'];
                 @endphp
                 @if (empty($data['serv'][$ke]['category_id']) || $data['serv'][$ke]['category_id'] === '')
-                    <article class="main_section_article ">
+                    <article class="main_section_article back mt-4">
                     <a href="<?php echo url('/'.$page_data[0]['alias'].'/service/'.$data['serv'][$ke]['id']); ?>">
                         <div class="main_section_article_imgdiv">
                             <img src="{{asset('storage'.$img_serv)}}" alt="Фото {{$serv['name']}}" class="main_section_article_imgdiv_img" />
                         </div>
-                        <div class="main_section_article_content  mt-1">
+                        <div class="main_section_article_content mt-4">
                             <h3>{{$data['serv'][$ke]['name']}}</h3>
                             <!-- <span>{{$data['serv'][$ke]['description']}}</span><br /> -->
-                            <span>от {{$data['serv'][$ke]['price']}} руб.</span>
+                            <span>От {{$data['serv'][$ke]['price']}} руб.</span>
                         </div>
                     </a>
                     </article>

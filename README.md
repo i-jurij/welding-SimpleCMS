@@ -92,8 +92,9 @@ Also put route in routes/web.php.
 In form service_page = yes.
 An entry will be created in the database.
 
-### SERVICE edit
-First create the services, then the masters.
+### SERVICES edit
+First create the services, then the masters.   
+
 
 ### MASTERS edit   
 All masters must have a some service,    

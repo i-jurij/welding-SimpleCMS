@@ -39,7 +39,7 @@
 
     --bgcolor: #484848;
     --bgcolor-content: #6d6d6d;
-    --input_bgcolor: rgb(212, 212, 212, 0.5);
+    --input_bgcolor: rgba(212, 212, 212, 0.661);
     --bgcolor-button-active: rgb(101, 101, 101);
 
     --fontcolor-light: #1e1e1e;
@@ -785,29 +785,6 @@ a.gallery_a:hover img {
     vertical-align: middle;
 }
 
-.persinfo {
-    margin: 0 auto 1rem auto;
-    padding: 1rem 3rem 2rem 3rem;
-    text-align: justify;
-    max-width: 60rem;
-}
-
-.persinfo h3 {
-    margin: 0 auto 1rem auto;
-    font-size: var(--big-fontsize);
-}
-
-.persinfo ul {
-    margin: 1rem auto 0 auto;
-    padding: 0 0 0 0;
-}
-
-.persinfo li {
-    list-style-position: inside;
-    margin: 1rem 0 0 0;
-    padding: 0 0 0 0;
-}
-
 .centr {
     text-align: center;
     column-span: all;
@@ -1545,7 +1522,7 @@ a.gallery_a:hover img {
     vertical-align: top;
     height: 5rem;
     width: 100%;
-    background-color: var(--bgcolor-content);
+    background-color: var(--input_bgcolor);
 }
 
 .input-file {
@@ -1685,10 +1662,6 @@ a.gallery_a:hover img {
     .content {
         width: 100%;
         max-width: 928px;
-    }
-
-    .persinfo {
-        padding: 1rem 2rem 1rem 2rem;
     }
 
     .zapis_usluga_spisok {

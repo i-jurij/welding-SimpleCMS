@@ -66,9 +66,9 @@ unset($content['pages_menu'], $pages);
                 </div>
                 <div class="main_section_article_content">
                     <h2 class="">{{mb_ucfirst($pages['title'])}}</h2>
-                    <span class="">
+                    <p class="">
                         {{mb_ucfirst($pages['description'])}}
-                    </span>
+                    </p>
                 </div>
             </a>
 		</article>

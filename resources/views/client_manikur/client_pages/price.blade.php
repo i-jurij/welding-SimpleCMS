@@ -21,7 +21,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 @if (!empty($menu)) <p class="content">{{$menu}}</p> @endif
 
 @if (!empty($data))
-    <div class="zapis_usluga mb-1 mx-1">
+    <div class="w-full my-4">
 <?php
 if (!empty($data['serv'])) {
     foreach ($data['serv'] as $page => $cat_arr) {
@@ -30,8 +30,8 @@ if (!empty($data['serv'])) {
         $page_name = $arr[1];
         $i = 1;
         ?>
-        <div class="back shad p-1 mb-1 mx-1 price ankor" id="<?php echo $page_alias; ?>">
-            <table class="table">
+        <div class="back shad price ankor p-4 mx-auto" id="<?php echo $page_alias; ?>">
+            <table class="table ">
                 <caption class=""><?php echo '<a href="'.url('/').'/'.$page_alias.'/" ><h2>'.$page_name.'</h2></a>'; ?></caption>
                 <colgroup>
                 <col width="10%">
@@ -57,14 +57,14 @@ if (!empty($data['serv'])) {
                             <tr>
                             <td><?php echo $i; ?></td>
                             <td style="text-align:left"><?php echo $name; ?></td>
-                            <td><?php echo $value; ?></td>
+                            <td>от <?php echo $value; ?></td>
                             </tr>
                             <?php
                             ++$i;
                         }
                     } else {
                         ?>
-                        <tr><td colspan="3"><h3>Другие услуги</h3></td></tr>
+                        <tr><td colspan="3"><!-- <h3>Другие услуги </h3>--></td></tr>
                         <!-- <tr><td colspan="3"></td></tr> -->
                         <?php
                         foreach ($serv as $name => $value) {
@@ -72,7 +72,7 @@ if (!empty($data['serv'])) {
                             <tr>
                             <td><?php echo $i; ?></td>
                             <td style="text-align:left"><?php echo $name; ?></td>
-                            <td><?php echo $value; ?></td>
+                            <td>от <?php echo $value; ?></td>
                             </tr>
                             <?php
                             ++$i;

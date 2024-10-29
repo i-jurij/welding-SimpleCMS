@@ -27,7 +27,7 @@ foreach ($content['pages_menu'] as $pages) {
             $sort_pages[1] = $pages;
         } elseif ($pages['alias'] === 'gates') {
             $sort_pages[2] = $pages;
-        } elseif ($pages['alias'] === 'service2') {
+        } elseif ($pages['alias'] === 'canopy') {
             $sort_pages[3] = $pages;
               } elseif ($pages['alias'] === 'service3') {
             $sort_pages[4] = $pages;

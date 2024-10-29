@@ -24,11 +24,15 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 
     @if (!empty($menu)) <p class="content">{{$menu}}</p> @endif
 
+    @if(is_string($this_show_method_data))
+        <p class="back shad p-4 m-4">{{$this_show_method_data}}</p>
+    @endif
+
     @if (!empty($this_show_method_data))
         @include('components.back_button_js')
 
         @php
-            $title = (!empty($this_show_method_data['cat']['name'])) ? $this_show_method_data['cat']['name'] : $this_show_method_data['serv']['name'];
+            $title = (!empty($this_show_method_data['cat']['name'])) ? $this_show_method_data['cat']['name'] : (!empty($this_show_method_data['serv']) ? $this_show_method_data['serv']['name'] : '');
             $page_meta_description = (!empty($this_show_method_data['cat']['description'])) ? $this_show_method_data['cat']['description'] : ((!empty($this_show_method_data['serv']['description'])) ? $this_show_method_data['serv']['description'] : '');
             $page_meta_keywords = str_replace(' ', ', ', $page_meta_description);
             $robots = "INDEX, FOLLOW";
@@ -76,19 +80,16 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 $serv = $this_show_method_data['serv'];
                 $img_serv = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$serv['image'];
             @endphp
-            <article class="back shad p-4 my-4 mx-4">
-                <div class="">
+            <article class="back shad p-4 my-4 mx-4 md:flex md:justify-normal">
                     <img
                         src="{{asset('storage'.$img_serv)}}"
                         alt="Фото {{$serv['name']}}"
-                        style="display:block;"
-                        class="w-3/5 max-w-xs mx-auto md:me-4 float:none md:float-left"
+                        class="w-3/5 max-w-xs mx-auto md:me-4"
                     />
-                </div>
                 <div class="mt-4">
                     <h3>{{$serv['name']}}</h3>
-                    <span>{{$serv['description']}}</span><br />
-                     <span>От {{$serv['price']}} руб.</span>
+                    <p class="text-justify max-w-xl m-4">{{$serv['description']}}</p>
+                     <p>От <span class="font-bold">{{$serv['price']}}</span> руб.</p>
                 </div>
             </article>
             <br>

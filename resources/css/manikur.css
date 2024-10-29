@@ -1,21 +1,14 @@
-@font-face {
-    font-family: 'Liberation Sans';
-    src: local('Liberation Sans Regular'),
-        url('/resources/fonts/liberation-sans.woff') format('woff'), url('/resources/fonts/liberation-sans.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Nautilus Pompilius';
-    src: url('/resources/fonts/nautiluspompilius.woff2') format('woff2'), url('/resources/fonts/nautiluspompilius.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
 :root {
-    --family: 'Liberation Sans', Arial, "Helvetica CY", Helvetica, "Nimbus Sans L", "Roboto", "Noto Sans", sans-serif;
-    --family_title: 'Nautilus Pompilius', cursive;
+    --family: system-ui,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    --family_title: system-ui, sans-serif;
     --mono: ui-monospace,
         Menlo, Monaco,
         "Cascadia Mono", "Segoe UI Mono",
@@ -416,7 +409,7 @@ textarea:valid {
 }
 
 .he_adres_a {
-    font-family: 'Nautilus Pompilius', sans-serif;
+    font-family: var(--family_title);
 }
 
 .he_soz {
@@ -734,7 +727,7 @@ a.gallery_a:hover img {
 
 .buttons {
     font-size: var(--base-fontsize);
-    font-family: "Liberation Sans", sans-serif;
+    font-family: var(--family);
     padding: 1rem;
     margin: 0.5rem auto;
     text-align: center;
@@ -1280,7 +1273,7 @@ a.gallery_a:hover img {
 
 .cs_buttons {
     font-size: var(--base-fontsize);
-    font-family: "Liberation Sans", sans-serif;
+    font-family: var(--family);
     border: 0px solid black;
     padding: 0.5rem 1rem;
     margin: 0.5rem;

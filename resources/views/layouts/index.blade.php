@@ -26,7 +26,7 @@
                 <div class="flex flex_top">
 
                         <div class="content title">
-                            <video width="60" autoplay muted loop class="float-left m-0 p-0">
+                            <video width="60" autoplay muted loop class="float-left m-0 p-0 me-4">
                                 <source src="{{asset('storage/images/weld.mp4')}}" type="video/mp4">
                             </video>
                             <h1>{{ $title }}</h1>

@@ -77,8 +77,8 @@ class ServicePageController extends Controller
             } elseif (count($path_array) === 3 || count($path_array) === 4) {
                 $this_show_method_data = $this->show($path_array);
             } else {
-                $data['res'] = 'Too many parameters in the query string.';
-                // abort(404);
+                // $data['res'] = 'Too many parameters in the query string.';
+                return abort(404);
             }
         }
 
@@ -95,7 +95,9 @@ class ServicePageController extends Controller
                 if (preg_match('/\A\d{1,5}\z/', $path_array[2])) {
                     $id = $path_array[2];
                 } else {
-                    $this_show_method_data = ['No id in path of url.'];
+                    // $this_show_method_data = 'No id in path of url.';
+
+                    return abort(404);
                 }
 
                 if (!empty($id) && $path_array[1] === 'category') {
@@ -105,11 +107,18 @@ class ServicePageController extends Controller
                     $this_show_method_data['content'] = $this->get_odt_content_for_service($id);
                 }
                 if (!empty($id) && $path_array[1] === 'service') {
-                    $this_show_method_data['serv'] = Service::find($id)->toArray();
+                    $this_show_method_data['serv'] = Service::find($id);
+
+                    if (!empty($this_show_method_data['serv'])) {
+                        $this_show_method_data['serv']->toArray();
+                    }
+
                     $this_show_method_data['content'] = $this->get_odt_content_for_service($id);
                 }
             } else {
-                $this_show_method_data = ['No "category" or "service" in path of url.'];
+                // $this_show_method_data = 'No "category" or "service" in path of url.';
+
+                return abort(404);
             }
         } elseif (count($path_array) === 4) {
             if ($path_array[1] === 'category' && $path_array[2] === 'service') {
@@ -118,10 +127,14 @@ class ServicePageController extends Controller
                     $this_show_method_data['serv'] = Service::find($id)->with('category')->toArray();
                     $this_show_method_data['content'] = $this->get_odt_content_for_service($id);
                 } else {
-                    $this_show_method_data = ['No id in path of url.'];
+                    // $this_show_method_data = 'No id in path of url.';
+
+                    return abort(404);
                 }
             } else {
-                $this_show_method_data = ['No "category" or "service" in path of url.'];
+                // $this_show_method_data = 'No "category" or "service" in path of url.';
+
+                return abort(404);
             }
         }
 

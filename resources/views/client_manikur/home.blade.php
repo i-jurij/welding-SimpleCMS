@@ -65,7 +65,7 @@ unset($content['pages_menu'], $pages);
                     <img src="{{asset('storage/'.$pages['img'])}}" alt="{{$pages['title']}}" class="main_section_article_imgdiv_img" />
                 </div>
                 <div class="main_section_article_content">
-                    <h2 class="">{{mb_ucfirst($pages['title'])}}</h2>
+                    <h2 class="font-bold">{{mb_ucfirst($pages['title'])}}</h2>
                     <p class="">
                         {{mb_ucfirst($pages['description'])}}
                     </p>

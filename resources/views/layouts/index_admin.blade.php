@@ -18,11 +18,11 @@
 </head>
 <body>
 @include('layouts.navigation')
-    <div class="wrapper">
+    <div style="width: 95%;" class="h-full max-w-screen-2xl mx-auto table">
 
-        <div class="main ">
-            <section class="main_section">
-                <div class="flex flex_top">
+        <div class="w-full h-full ">
+            <section class="items-start w-full relative ">
+                <div class="">
                     <!--
                     <div class="content title">
                         <p class="nav">
@@ -50,6 +50,7 @@
                     @endif
 
                     @yield('content')
+
                     @if (url()->current() !== url()->route('admin.home'))
 
                         @php $pieces = explode('/', Request::path()); @endphp
@@ -67,6 +68,8 @@
             </section>
         </div>
     </div>
+
+    <p style="height:5rem;">&nbsp;</p>
 
     @stack('js')
 

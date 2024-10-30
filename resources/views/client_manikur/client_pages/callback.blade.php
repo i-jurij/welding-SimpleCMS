@@ -30,7 +30,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
         </p>
     @elseif (!empty($res) && is_string($res)) <p class="content">{{$res}}</p>
     @else
-        <p class="back shad p-4 my-4 mx-auto zapis_usluga">
+        <p class="back shad p-4 my-4 mx-auto w-full">
             Не обещаем перезвонить вам сразу же. У нас нет колл-центра.<br />
             Перезвоним как только сможем.
         </p>

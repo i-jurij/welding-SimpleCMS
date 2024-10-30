@@ -25,33 +25,33 @@ if (!empty($content['contacts'])) {
 }
 
 ?>
-<div class="he_soz_tlf flex">
-        <div class="he_soz me-4">
-            <?php
-                if (!empty($data['telegram'])) {
-                    echo '<a href="tg://resolve?domain='.$data['telegram'][0].'" title="Telegram" class="he_soz-tg" target="_blank" rel="noopener"></a>';
-                }
-                if (!empty($data['vk'])) {
-                    echo '<a href="https://vk.com/'.$data['vk'][0].'" title="Вконтакте" class="he_soz-vk" target="_blank" rel="noopener"></a>';
-                }
-?>
-        </div>
-
-        <div class="he_tlf me-4">
-            <?php
-    if (!empty($data['tlf'])) {
-        foreach ($data['tlf'] as $tlf) {
-            echo '<span class="me-4"><a href="tel:'.$tlf.'">'.$tlf.'</a></span> ';
-        }
-    }
-?>
-        </div>
-    </div>
-
-    <div class="he_adres">
+<div class="he_soz_tlf sm:flex items-center justify-center">
+    <div class="he_soz me-4">
         <?php
-if (!empty($data['adres'])) {
-    //echo '<a class="he_adres_a" href="'.url('/').'/map/">'.$data['adres'][0].'</a>';
-}
-?>
+            if (!empty($data['telegram'])) {
+                echo '<a href="tg://resolve?domain='.$data['telegram'][0].'" title="Telegram" class="he_soz-tg" target="_blank" rel="noopener"></a>';
+            }
+            if (!empty($data['vk'])) {
+                echo '<a href="https://vk.com/'.$data['vk'][0].'" title="Вконтакте" class="he_soz-vk" target="_blank" rel="noopener"></a>';
+            }
+        ?>
     </div>
+
+    <div class="he_tlf font-bold text-lg">
+        <?php
+            if (!empty($data['tlf'])) {
+                foreach ($data['tlf'] as $tlf) {
+                    echo '<span class="me-4"><a class="hover:text-blue-900" href="tel:'.$tlf.'">'.$tlf.'</a></span> ';
+                }
+            }
+        ?>
+    </div>
+</div>
+
+<div class="he_adres m-4 ">
+    <?php
+        if (!empty($data['adres'])) {
+            echo '<a class="inline-block mb-4 lg:inline lg:mb-0" href="'.url('/').'/map/">'.$data['adres'][0].'</a>';
+        }
+        ?>
+</div>

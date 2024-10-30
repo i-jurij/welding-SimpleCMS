@@ -17,23 +17,22 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body class="">
-    <div class="wrapper">
+<body class="font-sans">
+    <div style="width: 95%;" class="h-full max-w-screen-2xl mx-auto table">
         @include('layouts/header')
 
-        <div class="main ">
-            <section class="main_section mx-auto">
-                <div class="flex flex_top">
+        <div class="w-full h-full ">
+            <section class="items-start w-full relative mx-auto">
 
-                        <div class="content title">
-                            <video width="60" autoplay muted loop class="float-left m-0 p-0 me-4">
-                                <source src="{{asset('storage/images/weld.mp4')}}" type="video/mp4">
-                            </video>
-                            <h1>{{ $title }}</h1>
-                        </div>
+                <div class="back shad w-full mt-4 p-4 flex content-start">
+                    <video width="60" autoplay muted loop class="me-4 ">
+                        <source src="{{asset('storage/images/weld.mp4')}}" type="video/mp4">
+                    </video>
+                    <h1 class="w-full text-xl font-bold self-center">{{ $title }}</h1>
+                </div>
 
-                    @if ($errors->any())
-                        <div class="zapis_usluga back shad p-4 my-4 alert alert-danger error">
+                @if ($errors->any())
+                        <div class="w-full back shad p-4 my-4 alert alert-danger error">
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     @if (is_array($error))
@@ -50,18 +49,18 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endif
-                    @yield('content')
+                @endif
 
-                    @if (url()->current() !== url()->route('client.home'))
+                @yield('content')
+
+                @if (url()->current() !== url()->route('client.home'))
                         @php $pieces = explode('/', Request::path()); @endphp
                         @if (count($pieces) > 3)
                             @include('components/back_button')
                         @else
                             @include('components/button_client_home')
                         @endif
-                    @endif
-                </div>
+                @endif
             </section>
         </div>
 

@@ -34,8 +34,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
             Не обещаем перезвонить вам сразу же. У нас нет колл-центра.<br />
             Перезвоним как только сможем.
         </p>
-        <div class="back shad rad p-1 mb-1 form_recall_div">
-            <form action="{{$action}}" method="post" class="form-recall-main" id="recall_one">
+        <div class="form_recall_div">
+            <form action="{{$action}}" method="post" class="form-recall-main back shad p-4 mb-4 " id="recall_one">
                 @csrf
                 <div class="">
                     <div class="form-group pt-1">

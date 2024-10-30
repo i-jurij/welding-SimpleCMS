@@ -29,10 +29,10 @@ if (!empty($content['contacts'])) {
     <div class="he_soz me-4">
         <?php
             if (!empty($data['telegram'])) {
-                echo '<a href="tg://resolve?domain='.$data['telegram'][0].'" title="Telegram" class="he_soz-tg" target="_blank" rel="noopener"></a>';
+                echo '<a href="tg://resolve?domain='.$data['telegram'][0].'" title="Telegram" class="he_soz-tg m-2" target="_blank" rel="noopener"></a>';
             }
             if (!empty($data['vk'])) {
-                echo '<a href="https://vk.com/'.$data['vk'][0].'" title="Вконтакте" class="he_soz-vk" target="_blank" rel="noopener"></a>';
+                echo '<a href="https://vk.com/'.$data['vk'][0].'" title="Вконтакте" class="he_soz-vk m-2" target="_blank" rel="noopener"></a>';
             }
         ?>
     </div>

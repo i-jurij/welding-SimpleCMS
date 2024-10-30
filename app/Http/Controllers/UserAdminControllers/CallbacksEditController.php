@@ -62,11 +62,13 @@ class CallbacksEditController extends Controller
     {
         $res = '';
         $today = Carbon::today();
+        $yesterday = Carbon::yesterday();
 
         if ($request->has('submit')) {
             try {
                 // $callback::where('response', true)->delete();
-                $callback::where('response', true)->where('created_at', '<', $today->toDateTimeString())->delete();
+                // $callback::where('response', true)->where('created_at', '<', $today->toDateTimeString())->delete();
+                $callback::where('response', true)->where('created_at', '<', $yesterday->toDateTimeString())->delete();
                 Session::flash('res', 'Callbacks data have been removed!');
                 // $res .= 'Callbacks data have been removed!';
             } catch (\Throwable $th) {

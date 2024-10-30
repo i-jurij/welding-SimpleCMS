@@ -450,12 +450,6 @@ a.gallery_a:hover img {
     box-shadow: var(--boxshadow-active);
 }
 
-.foot {
-    display: table-row;
-    height: 1px;
-}
-
-
 .form-recall {
     background-color: var(--bgcolor);
     border-radius: var(--radius);
@@ -681,22 +675,6 @@ a.gallery_a:hover img {
 .adm_content a {
     display: inline-block;
     margin: 0.5rem;
-}
-
-.adm_recall_content {
-    flex-grow: 1;
-    border-radius: var(--radius);
-    background-color: var(--bgcolor);
-}
-
-.adm_recall_article_container {
-    align-items: stretch;
-}
-
-.adm_recall_article {
-    display: inline-block;
-    flex-grow: 1;
-    max-width: 100%;
 }
 
 .case_datetime {
@@ -1647,11 +1625,6 @@ a.gallery_a:hover img {
 
     .captcha_img img {
         width: 3rem;
-    }
-
-    .adm_recall_article {
-        /* display: block; */
-        margin: 0.5rem;
     }
 }
 

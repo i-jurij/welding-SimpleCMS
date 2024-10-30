@@ -31,7 +31,7 @@ class CallBackMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('jurijlunjov@yandex.ru', 'SimpleCMS'),
+            from: new Address(env('MAIL_FROM_ADDRESS'), env('APP_NAME')),
             subject: 'Call Back',
             tags: ['callback']
         );

@@ -38,7 +38,7 @@ class JobCallbackMail implements ShouldQueue
         $today = date('Y-m-d_H:i:s');
         $data = $this->data;
         try {
-            Mail::to('yjurij@gmail.com')->send(new CallBackMail($data));
+            Mail::to(env('MAIL_TO'))->send(new CallBackMail($data));
         } catch (\Throwable $th) {
             $storageDestinationPath = storage_path('logs'.DIRECTORY_SEPARATOR.'callback_mail_error.log');
             if (!File::exists($storageDestinationPath)) {

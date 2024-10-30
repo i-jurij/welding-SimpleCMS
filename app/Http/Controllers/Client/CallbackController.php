@@ -132,10 +132,12 @@ class CallbackController extends Controller
 
                 // $this->send_mail($request);
                 $data = [
-                    'name' => ($request->name) ? $request->name : 'no name',
+                    'name' => ($request->name) ? $request->name : '',
                     'phone' => $request->phone_number,
-                    'send' => ($request->send) ? $request->send : 'no send',
+                    'send' => ($request->send) ? $request->send : '',
                 ];
+
+                // SEND MAIL
                 JobCallbackMail::dispatch($data);
             }
 

@@ -31,6 +31,8 @@
                     <h1 class="w-full text-xl font-bold self-center">{{ $title }}</h1>
                 </div>
 
+                <x-flash-messages />
+
                 @if ($errors->any())
                         <div class="w-full back shad p-4 my-4 alert alert-danger error">
                             <ul>

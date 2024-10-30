@@ -35,14 +35,14 @@ $fmt = new IntlDateFormatter(
         <form action="" method="post" class="">
             @csrf
             <div class="my-0.5">
-            <input type="submit" class="buttons" name="submit" value="Удалить"/>
+            <input type="submit" class="buttons" name="submit" value="Подтвердить"/>
             <input type="reset" class="buttons" value="Cбросить"/>
             </div>
-            <div class="flex items-center justify-center">
+            <div class="flex flex-wrap items-center justify-center">
                 @foreach ($callbacks as $cb)
                     <article class="shad p-4 m-4">
                         <div class="">{{$fmt->format($cb->created_at)}}</div>
-                            <div class="mb-4">
+                            <div class="">
                                 <table class="text_left">
                                     <tr>
                                         <td>Имя:</td>
@@ -57,9 +57,9 @@ $fmt = new IntlDateFormatter(
                                         <td>&nbsp;{{$cb->send}}</td>
                                     </tr>
                                 </table>
-                                <p class="mt-1">
-                                    <label class="shad p-1"><input type="checkbox" name="id[]" value="{{$cb->id}}" /> Перезвонили</label>
-                                </p>
+                                <div class="mt-4">
+                                    <label class="shad p-2"><input type="checkbox" name="id[]" value="{{$cb->id}}" /> Перезвонили</label>
+                                </div>
                             </div>
                     </article>
                 @endforeach

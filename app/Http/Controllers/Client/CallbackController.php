@@ -139,9 +139,10 @@ class CallbackController extends Controller
                 JobCallbackMail::dispatch($data);
             }
 
-            $res = ['Ваша заявка принята. Ожидайте звонка...'];
+            // $res = ['Ваша заявка принята. Ожидайте звонка...'];
+            // return view('client_manikur.client_pages.callback-stored', ['res' => $res, 'content' => $content]);
 
-            return view('client_manikur.client_pages.callback-store', ['res' => $res, 'content' => $content]);
+            return redirect()->route('client.home')->with('success', 'Ваша заявка принята. Ожидайте звонка...');
         } else {
             return response($res, 200)->header('Content-Type', 'text/plain');
         }

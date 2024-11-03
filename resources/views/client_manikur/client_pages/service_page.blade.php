@@ -47,8 +47,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 <div class="main_section_article_imgdiv">
                     <img src="{{asset('storage'.$img_cat)}}" alt="Фото {{$cat['name']}}" class="main_section_article_imgdiv_img" />
                 </div>
-                <div class="main_section_article_content mt-1">
-                    <h3>{{$cat['name']}}</h3>
+                <div class="main_section_article_content mt-4">
+                    <h3 class="font-bold text-lg">{{$cat['name']}}</h3>
                     <span>{{$cat['description']}}</span>
                 </div>
             </article>
@@ -64,7 +64,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                                 <img src="{{asset('storage'.$img_serv)}}" alt="Фото {{$serv['name']}}" class="main_section_article_imgdiv_img" />
                             </div>
                             <div class="main_section_article_content  mt-4">
-                                <h3>{{$serv['name']}}</h3>
+                                <h3 class="font-bold">{{$serv['name']}}</h3>
                                 <span>{{$serv['description']}}</span><br />
                                 <span>От {{$serv['price']}} руб.</span>
                             </div>
@@ -80,15 +80,15 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 $serv = $this_show_method_data['serv'];
                 $img_serv = DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$serv['image'];
             @endphp
-            <article class="back shad p-4 my-4 mx-4 md:flex md:justify-normal">
+            <article class="back shad p-6 my-4 mx-auto inline-block">
                     <img
                         src="{{asset('storage'.$img_serv)}}"
                         alt="Фото {{$serv['name']}}"
-                        class="w-3/5 max-w-xs mx-auto md:me-4"
+                        class="w-3/5 max-w-xs ms-auto me-auto md:ms-0 md:me-6 md:float-left"
                     />
-                <div class="mt-4">
-                    <h3>{{$serv['name']}}</h3>
-                    <p class="text-justify max-w-xl m-4">{{$serv['description']}}</p>
+                <div class="max-w-4xl">
+                    <h3 class="hidden font-bold text-lg">{{$serv['name']}}</h3>
+                    <p class="text-justify mt-4 md:mt-0 mb-4 mx-auto">{{$serv['description']}}</p>
                      <p>От <span class="font-bold">{{$serv['price']}}</span> руб.</p>
                 </div>
             </article>
@@ -105,10 +105,10 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
     @else
         <article class="main_section_article back mt-4">
             <div class="main_section_article_imgdiv p-4">
-                <h2>Расценки</h2>
+                <h2 class="font-bold text-xl">Расценки</h2>
             </div>
-            <div class="main_section_article_content"><br />
-                <h2>{{$title}}</h2>
+            <div class="main_section_article_content">
+                <h2 class="font-bold">{{$title}}</h2>
                 @if (!empty($data['min_price']))
                     @foreach ($data['min_price'] as $k => $v)
                         <span>{{$k}} - от {{$v}} руб.</span><br />
@@ -130,7 +130,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                         <img src="{{asset('storage'.$img_cat)}}" alt="Фото {{$cat['name']}}" class="main_section_article_imgdiv_img" />
                     </div>
                     <div class="main_section_article_content mt-4">
-                        <h3>{{$cat['name']}}</h3>
+                        <h3 class="font-bold text-lg">{{$cat['name']}}</h3>
                             @if (!empty($data['serv']))
                                 @foreach ($data['serv'] as $k => $serv)
                                     @if ($serv['category_id'] == $cat['id'])
@@ -156,7 +156,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                             <img src="{{asset('storage'.$img_serv)}}" alt="Фото {{$serv['name']}}" class="main_section_article_imgdiv_img" />
                         </div>
                         <div class="main_section_article_content mt-4">
-                            <h3>{{$data['serv'][$ke]['name']}}</h3>
+                            <h3 class="font-bold">{{$data['serv'][$ke]['name']}}</h3>
                             <!-- <span>{{$data['serv'][$ke]['description']}}</span><br /> -->
                             <span>От {{$data['serv'][$ke]['price']}} руб.</span>
                         </div>
@@ -164,8 +164,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                     </article>
                 @endif
             @endforeach
+
         @endif
 
     @endif
-
 @stop

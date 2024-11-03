@@ -1,22 +1,23 @@
 :root {
     --radius: 0.4rem;
 
-    --bgcolor: #484848;
-    --bgcolor-content: #6d6d6d;
-    --input_bgcolor: rgba(212, 212, 212, 0.661);
-    --bgcolor-button-active: rgb(101, 101, 101);
+    --bgcolor: rgb(114, 102, 80);
+    --bgcolor-content: rgb(232, 214, 180);
+    --bgimage: url("../../storage/app/public/images/back-content.webp");
+    --input_bgcolor: rgba(255, 233, 191, 0.661);
+    --bgcolor-button-active: rgb(95, 84, 66);
 
     --fontcolor-light: #1e1e1e;
     --fontcolor-dark: #1CBADF;
 
     --fontshadow: rgba(255, 255, 255, 0.6) 1px 0 0;
     --boxshadow: 0px 0px 2px 1px rgba(74, 76, 78, 0.3), 1px 1px 1px 1px rgba(41, 41, 41, 0.4);
-    --boxshadow-active: rgba(0, 0, 0, 0.4) 1px 1px 3px 1px, rgba(0, 0, 0, 0.3) 1px 2px 2px -3px, rgba(0, 0, 0, 0.2) 1px 2px 6px 1px;
+    --boxshadow-active: rgba(0, 0, 0, 0.5) 0px 1px 3px 1px, rgba(0, 0, 0, 0.4) 1px 2px 2px -3px, rgba(0, 0, 0, 0.3) 1px 2px 6px 1px;
 
     --button-disabled-color: Maroon;
 
-    --table-bgcolor1: rgb(191, 191, 191, 0.5);
-    --table-bgcolor2: rgb(178, 178, 178, 0.5);
+    --table-bgcolor1: rgba(240, 218, 178, 0.661);
+    --table-bgcolor2: rgba(228, 204, 158, 0.661);
 
     --table-border: 1px solid #000;
 
@@ -44,18 +45,21 @@ body {
     color: var(--fontcolor-light, black);
 }
 
-
 a:link {
-    text-decoration: none;
     color: var(--fontcolor-light);
     text-shadow: var(--fontshadow);
+
+    text-decoration: underline dashed;
+    text-underline-offset: 1px;
+    /* text-decoration-thickness: 1px; */
+    text-underline-position: under;
 }
 
 a:visited,
 a:focus,
 a:hover,
 a:active {
-    color: var(--fontcolor-light, black);
+    color: black;
     text-decoration: underline;
 }
 
@@ -151,25 +155,19 @@ textarea:valid {
 
 .bgcolor {
     background-color: var(--bgcolor);
-    background-image: url("../../storage/app/public/images/back-1.webp");
+    background-image: url("../../storage/app/public/images/back-html.webp");
     background-repeat: repeat;
     background-attachment: fixed;
 }
 
 .bgcontent {
-    background: repeat url("../../storage/app/public/images/back-4.jpg");
+    background-image: var(--bgimage);
     background-repeat: repeat;
 }
 
 .back {
-    background-image: url("../../storage/app/public/images/back.jpg");
+    background-image: var(--bgimage);
     background-repeat: repeat;
-}
-
-.bg_gray_gradient {
-    background: -webkit-linear-gradient(360deg, #949494 10%, #efefef 360%);
-    background: linear-gradient(360deg, #949494 10%, #efefef 360%);
-    background-attachment: fixed;
 }
 
 .bg_dotted_small {
@@ -365,7 +363,7 @@ textarea:valid {
     width: 100%;
     max-width: 1640px;
     background-color: var(--bgcolor-content) none repeat scroll 0% 0%;
-    background-image: url("../../storage/app/public/images/back.jpg");
+    background-image: var(--bgimage);
     background-repeat: repeat;
     box-shadow: var(--boxshadow);
 }
@@ -392,16 +390,19 @@ textarea:valid {
     width: 100%;
     min-width: 12rem;
     max-width: calc((100%/4) - 4.3rem);
+    /* flex: 1 1 calc((100%/4) - 4.3rem); */
     display: inline-block;
     margin: 1rem 1rem 1rem 1rem;
     padding: 1rem 1rem 1rem 1rem;
-    flex-grow: 1;
     box-shadow: var(--boxshadow);
     vertical-align: top;
 }
 
+.main_section_article:hover {
+    box-shadow: var(--boxshadow-active);
+}
+
 .main_section_article .main_section_article_imgdiv {
-    height: 60%;
     overflow: hidden;
     border-radius: var(--radius);
 }
@@ -414,17 +415,18 @@ textarea:valid {
     vertical-align: middle;
 }
 
-.main_section_article_content h2 {
+.main_section_article h2 {
     /* font-size: var(--big-fontsize); */
 }
 
-.main_section_article_content_a {
-    /* font-family: var(--family); */
+.main_section_article a {
+    text-decoration: none;
 }
 
-.main_section_article_content_a:hover {
+.main_section_article a:visited,
+.main_section_article a:active,
+.main_section_article a:hover {
     text-decoration: underline;
-    text-decoration-style: dashed;
 }
 
 .gallery {
@@ -453,10 +455,6 @@ a.gallery_a:hover img {
 .form-recall {
     background-color: var(--bgcolor);
     border-radius: var(--radius);
-}
-
-.form-recall a {
-    text-decoration: underline;
 }
 
 .form-recall-main {
@@ -1090,14 +1088,9 @@ a.gallery_a:hover img {
     text-decoration: none;
 }
 
-.nav a:hover {
-    text-decoration: underline;
-}
-
 .nav a:last-child {
     text-decoration: underline;
     font-size: var(--base-fontsize);
-    /* font-size: var(--big-fontsize); */
 }
 
 .form_page_add {

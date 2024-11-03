@@ -29,11 +29,11 @@ foreach ($content['pages_menu'] as $pages) {
             $sort_pages[2] = $pages;
         } elseif ($pages['alias'] === 'canopy') {
             $sort_pages[3] = $pages;
-              } elseif ($pages['alias'] === 'service3') {
+              } elseif ($pages['alias'] === 'stairs') {
             $sort_pages[4] = $pages;
-              } elseif ($pages['alias'] === 'service4') {
+              } elseif ($pages['alias'] === 'fence') {
             $sort_pages[5] = $pages;
-              } elseif ($pages['alias'] === 'service5') {
+              } elseif ($pages['alias'] === 'other') {
             $sort_pages[6] = $pages;
               } elseif ($pages['alias'] === 'service6') {
             $sort_pages[7] = $pages;
@@ -60,7 +60,7 @@ unset($content['pages_menu'], $pages);
 ?>
     @foreach ($sort_pages as $pages)
         <article class="main_section_article back">
-            <a class="main_section_article_content_a" href="{{url('/'.$pages['alias'])}}" >
+            <a href="{{url('/'.$pages['alias'])}}" >
                 <div class="main_section_article_imgdiv mb-4">
                     <img src="{{asset('storage/'.$pages['img'])}}" alt="{{$pages['title']}}" class="main_section_article_imgdiv_img" />
                 </div>
@@ -75,7 +75,7 @@ unset($content['pages_menu'], $pages);
     @endforeach
 @else
         <article class="main_section_article back">
-            <a class="main_section_article_content_a" href="" >
+            <a class="" href="" >
                 <div class="main_section_article_imgdiv">
                 <img src="{{asset('storage/images/ddd.jpg')}}" alt="No picture" class="main_section_article_imgdiv_img" />
                 </div>

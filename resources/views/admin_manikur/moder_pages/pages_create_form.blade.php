@@ -36,18 +36,19 @@ if ((bool) mb_strstr(url()->current(), 'service_page')) {
 
 <div class="mt-4">
 @if (!empty($img_res)) <p class="content">MESSAGE: {!! $img_res !!}</p> @endif
-    <div class="mb-1" style="max-width:55rem;">
+    <div class="mb-4 mx-auto" style="max-width:55rem;">
                 <form action="{{url()->route('admin.pages.store')}}" method="post" enctype="multipart/form-data" name="create_page" id="create_page" class="form_page_add">
                 @csrf
-                    <div class="back shad rad p-1 mx-1 mb-1">
-                        <p class="mx-1 mb-1">Выберите файлы</p>
-                        <label class="display_inline_block mb-1">Файл изображения страницы (jpg, png, webp, < 1MB):<br />
+                    <div class="back shad rad p-4 mx-4 mb-4">
+                        <p class="mb-4">Выберите файл изображения страницы (jpg, png, webp, < 1MB):</p>
+                        <label class="display_inline_block mb-1 ">
                             <input type="hidden" name="MAX_FILE_SIZE" value="1024000" />
                             <input type="file" name="picture" accept="image/jpeg, image/pjpeg, image/png, image/webp" />
                         </label>
                     </div>
-                    <div class="mb-1 back shad rad p-1 m-1">
-                        <p class="mx-1 mb-1">Введите данные (alias и title обязательны)</p>
+
+                    <div class="mb-1 back shad rad p-4 m-4">
+                        <p class="mx-4 mb-4">Введите данные (alias и title обязательны)</p>
 <?php
 if (!empty($fields)) {
     foreach ($fields as $key => $val) {
